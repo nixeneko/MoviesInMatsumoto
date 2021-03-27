@@ -16,7 +16,7 @@ THEATER_URL_DICT = {"アイシティシネマ": "http://www.fromeastcinema.com/"
                     "イオンシネマ松本": "https://www.aeoncinema.com/cinema/matsumoto/",
                     "シネマライツ": "http://cinema-lights8.com/",
                     "東座": "http://www.fromeastcinema.com/"}
-
+#作品一覧データを取得するURL
 URL_LIST = [
     ("http://cinema-lights8.com/", "lights.html"),
     ("http://www.inouedp.co.jp/schedule/", "icity.html"),
@@ -27,12 +27,12 @@ URL_LIST = [
     ("http://www.fromeastcinema.com/schedule.html", "azumaza_fe.html")
     ]
 
-DOWNLOADED_DIR = "downloaded"
-JSON_DIR = "json"
+DOWNLOADED_DIR = "downloaded" #取得したHTMLファイルを保存するディレクトリ
+JSON_DIR = "json" #作品一覧データのJSONを出力するディレクトリ
 
 TEMPLATE_HTML_FILE = "template.html"
 
-FOLDER_TIME_FMT = "%Y%m%d-%H%M"
+FOLDER_TIME_FMT = "%Y%m%d-%H%M" #取得したHTMLを入れるサブフォルダの形式。strftimeに渡す
 __recent_time_str = "" #キャッシュしちゃえ
 def get_recently_downloaded():
     global __recent_time_str
@@ -552,7 +552,12 @@ def make_html_tag(movie_list, time_str):
     table_data = ""
     for movie in movie_list:
         table_data += movie.to_tr_tag() + "\n"
-    return tag_str.format(date_updated=date_updated, table_data=table_data)
+    return tag_str.format(  date_updated=date_updated,
+                            table_data=table_data,
+                            url_icity=THEATER_URL_DICT["アイシティシネマ"],
+                            url_aeon=THEATER_URL_DICT["イオンシネマ松本"],
+                            url_lights=THEATER_URL_DICT["シネマライツ"],
+                            url_azumaza=THEATER_URL_DICT["東座"])
 
 def main():
     time_str = download_htmls()
@@ -564,8 +569,6 @@ def main():
     movies += read_aeoncinema()
     movies += read_azumaza()
     #movies = json.loads(jsonstr, object_hook=as_movietitle)
-    #for movie in movies:
-    #    print(movie)
     movies = sorted(movies)
     json_path = os.path.join(JSON_DIR, time_str+".json")
     #if not os.path.isfile(json_path):
