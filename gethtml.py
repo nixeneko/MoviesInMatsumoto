@@ -236,6 +236,7 @@ class MovieTitle():
 
 def date_str2date(s): # 7/10(土)～ または ～4月2日（金） とか
     # 2021/4/1終了予定 とかにも対応
+    if not s: return None
     date = None
     r_ymd = r"(\d{2,4})[/／年](\d{1,2})[/／月](\d{1,2})"
     m_ymd = re.search(r_ymd, s)
@@ -259,6 +260,7 @@ def date_str2date(s): # 7/10(土)～ または ～4月2日（金） とか
 def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土）～4月2日（金）
     #年は入力されないので適当に設定する
     #年を今年に設定した場合に開始日が今日の3か月以上前になるなら翌年とする
+    if not s: return None, None
     begin_date = None
     end_date = None
     today = datetime.date.today()
@@ -396,12 +398,14 @@ def read_cinemalights():
         when = data if data != "上映中" else ""
         上映中flg = bool(_data)
         
-        begin_date, end_date = None, None
+        begin_date, end_date = date_range_str2dates(when) #whenが空ならNone, None
         if when:
             if 上映中flg:
-                end_date = date_str2date(when)
+                if not end_date:
+                    end_date = date_str2date(when)
             else:
-                begin_date = date_str2date(when)
+                if not begin_date:
+                    begin_date = date_str2date(when)
         # when ~ "～\d{1,2}/\d{1,2}（.+）", "上映中", "\d{1,2}/\d{1,2}（.+）～?", "\d{2,4}年公開", "近日公開"
         
         if title:
