@@ -476,7 +476,7 @@
     "now_showing_flg": false,
     "when": "4月2日（金）～4月8日(木)",
     "begin_date": "2021-04-02",
-    "end_date": null,
+    "end_date": "2021-04-08",
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/15360/index.html"
   },
   {
@@ -486,7 +486,7 @@
     "now_showing_flg": false,
     "when": "4/2（金）～4/8（木)",
     "begin_date": "2021-04-02",
-    "end_date": null,
+    "end_date": "2021-04-08",
     "url": "https://wwws.warnerbros.co.jp/rurouni-kenshin2020/news/"
   },
   {
@@ -606,7 +606,7 @@
     "now_showing_flg": false,
     "when": "4月9日（金）～4月15日(木)",
     "begin_date": "2021-04-09",
-    "end_date": null,
+    "end_date": "2021-04-15",
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/AC100204/index.html"
   },
   {
@@ -616,7 +616,7 @@
     "now_showing_flg": false,
     "when": "4月9日（金）～4月15日(木)",
     "begin_date": "2021-04-09",
-    "end_date": null,
+    "end_date": "2021-04-15",
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1232/index.html"
   },
   {
@@ -626,7 +626,7 @@
     "now_showing_flg": false,
     "when": "4/9（金）～4/15（木）",
     "begin_date": "2021-04-09",
-    "end_date": null,
+    "end_date": "2021-04-15",
     "url": "https://wwws.warnerbros.co.jp/rurouni-kenshin2020/news/"
   },
   {
@@ -686,7 +686,7 @@
     "now_showing_flg": false,
     "when": "4月16日（金）～4月22日(木)",
     "begin_date": "2021-04-16",
-    "end_date": null,
+    "end_date": "2021-04-22",
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1540/index.html"
   },
   {
@@ -696,7 +696,7 @@
     "now_showing_flg": false,
     "when": "4/16（金）～4/22（木）",
     "begin_date": "2021-04-16",
-    "end_date": null,
+    "end_date": "2021-04-22",
     "url": "https://wwws.warnerbros.co.jp/rurouni-kenshin2020/news/"
   },
   {
