@@ -165,6 +165,23 @@ class MovieTitle():
         else:
             return self.now_showing_flg > other.now_showing_flg
     
+    def __eq__(self, other): #タイトルが変化する場合もあり…そういう場合はどうしよう
+        if type(self) != type(other): return False
+        return self.title == other.title and self.theater == other.theater
+    def __ne__(self, other):
+        return not self.__eq__(other)
+    #公開日未定→決定なら通知したいけど公開日→公開中になったやつはそのままにしたい。
+    #ひとまず開始日違いがあるのだけ判別しとるが…順序つけた方がいい気がする
+    def is_updated(self, other): #日程が変更されてればTrue
+        if self != ohter: return False #Falseでいいんかな?
+        if self.begin_date and other.begin_date:
+            return self.begin_date != other.begin_date
+        if self.begin_date is None and other.begin_date:
+            return True
+        if self.begin_date and other.begin_date is None:
+            return True
+        return False
+    
     def to_dict(self): #JSONableなやつを返す。冗長だけど。
         return {"title": self.title,
                 "theater": self.theater,
@@ -239,26 +256,33 @@ def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土�
     #年を今年に設定した場合に開始日が今日の3か月以上前になるなら翌年とする
     begin_date = None
     end_date = None
-    r = r"(\d{1,2}[/／月]\d{1,2})\D*[～〜~]\D*(\d{1,2}[/／月]\d{1,2})"
-    m = re.search(r, s)
-    if m:
-        today = datetime.date.today()
-        year = today.year
+    today = datetime.date.today()
+    year = today.year
+    # r = r"(\d{1,2}[/／月]\d{1,2})\D*[～〜~]\D*(\d{1,2}[/／月]\d{1,2})"
+    r_begin = r"(\d{1,2}[/／月]\d{1,2})\D*[～〜~]"
+    m_begin = re.search(r_begin, s)
+    if m_begin:
         # begin
-        month_str, day_str = m[1].replace("／", "/").replace("月", "/").split("/")
+        month_str, day_str = m_begin[1].replace("／", "/").replace("月", "/").split("/")
         month = int(month_str)
         day = int(day_str)
         begin_date = datetime.date(year, month, day)
         if today - begin_date > datetime.timedelta(days=90): #3か月以上前
             year+=1
             begin_date = datetime.date(year, month, day)
+    r_end = r"[～〜~]\D*(\d{1,2}[/／月]\d{1,2})"
+    m_end = re.search(r_end, s)
+    if m_end:
         # end
-        month_str, day_str = m[2].replace("／", "/").replace("月", "/").split("/")
+        month_str, day_str = m_end[1].replace("／", "/").replace("月", "/").split("/")
         month = int(month_str)
         day = int(day_str)
         end_date = datetime.date(year, month, day)
-        if end_date < begin_date: #開始時期よりも終了時期の方が早い
-            end_date = datetime.date(year+1, month, day)
+        if begin_date is None:
+            if today > end_date:
+                end_date = datetime.date(year+1, month, day)
+        elif end_date < begin_date: #開始時期よりも終了時期の方が早い
+                end_date = datetime.date(year+1, month, day)
     return begin_date, end_date
 
 def read_icitycinema():
