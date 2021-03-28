@@ -235,7 +235,12 @@ class MovieTitle():
              
 
 def date_str2date(s): # 7/10(土)～ または ～4月2日（金） とか
+    # 2021/4/1終了予定 とかにも対応
     date = None
+    r_ymd = r"(\d{2,4})[/／年](\d{1,2})[/／月](\d{1,2})"
+    m_ymd = re.search(r_ymd, s)
+    if m_ymd:
+        return datetime.date(int(m_ymd[1]), int(m_ymd[2]), int(m_ymd[3]))
     r = r"(\d{1,2}[/／月]\d{1,2})"
     m = re.search(r, s)
     if m:
@@ -423,10 +428,7 @@ def read_aeoncinema():
         上映終了tag = tag.find(class_="cbb_jyoueisyuryo")
         if 上映終了tag:
             when = 上映終了tag.get_text().strip()
-            m = re.search(r"(\d{2,4})/(\d{1,2})/(\d{1,2})", when)
-            if m:
-                end_date = datetime.date(int(m[1]), int(m[2]), int(m[3]))
-                
+            end_date = date_str2date(when)
         上映中flg = True
         
         movie = MovieTitle(title, theater, 上映中flg, 
@@ -456,9 +458,7 @@ def read_aeoncinema():
                 上映終了tag = tag2.find(class_="cbb_jyoueisyuryo")
                 if 上映終了tag:
                     end_when = 上映終了tag.get_text().strip()
-                    m = re.search(r"(\d{2,4})/(\d{1,2})/(\d{1,2})", end_when)
-                    if m:
-                        end_date = datetime.date(int(m[1]), int(m[2]), int(m[3]))
+                    end_date = date_str2date(end_when)
                 when = ""
                 if end_when:
                     when = start_when + "～" + end_when.replace("終了予定", "")
