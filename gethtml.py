@@ -238,7 +238,7 @@ def date_str2date(s): # 7/10(土)～ または ～4月2日（金） とか
     # 2021/4/1終了予定 とかにも対応
     if not s: return None
     date = None
-    r_ymd = r"(\d{2,4})[/／年](\d{1,2})[/／月](\d{1,2})"
+    r_ymd = r"(\d{4})[/／年](\d{1,2})[/／月](\d{1,2})"
     m_ymd = re.search(r_ymd, s)
     if m_ymd:
         return datetime.date(int(m_ymd[1]), int(m_ymd[2]), int(m_ymd[3]))
