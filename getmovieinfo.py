@@ -101,7 +101,7 @@ def hira_to_kata(s): #http://python-remrin.hatenadiary.jp/entry/2017/04/26/12345
     return "".join([chr(ord(c) + 96) if ("ぁ" <= c <= "ゖ") else c for c in s])
     
 def get_title_for_sorting(s):
-    return remove_space(hira_to_kata(remove_signs(remove_prefix(s))))
+    return remove_space(hira_to_kata(remove_signs(remove_prefix(s.lower()))))
 
 class MovieTitle():
     def __init__(self, 
@@ -170,6 +170,9 @@ class MovieTitle():
         return self.title == other.title and self.theater == other.theater
     def __ne__(self, other):
         return not self.__eq__(other)
+    def is_same_title(self, other):
+        if type(self) != type(other): return False
+        return self.title_for_sorting == other.title_for_sorting and self.begin_date == other.begin_date
     #公開日未定→決定なら通知したいけど公開日→公開中になったやつはそのままにしたい。
     #ひとまず開始日違いがあるのだけ判別しとるが…順序つけた方がいい気がする
     def is_updated(self, other): #日程が変更されてればTrue
@@ -336,6 +339,7 @@ def read_icitycinema():
                         or l.endswith("公開") \
                         or l.endswith("公開予定") \
                         or l.endswith("期間限定上映") \
+                        or l.endswith("上映予定") \
                         or l.endswith("上映終了") \
                         or l.endswith("公開日未定"):
                     title_state += 1
@@ -343,9 +347,9 @@ def read_icitycinema():
                 elif i>=1 and (l.startswith("©") or l.startswith("\u24d2") or l.startswith("\u24b8")):
                     title_state += 1
                 elif l == "※PG12" or l == "※R15+" or l == "※R18+":
-                    continue
+                    title_state += 1
                 elif n: # <2D/字幕スーパー>など
-                    continue
+                    title_state += 1
                 else:
                     if title_state == 0:
                         if movie_title and l: 
@@ -588,6 +592,7 @@ def make_html_tag(movie_list, time_str):
                             url_azumaza=THEATER_URL_DICT["東座"])
 
 def main():
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     time_str = download_htmls()
     global __today
     __today = datetime.date(int(time_str[0:4]), int(time_str[4:6]), int(time_str[6:8]))
