@@ -92,7 +92,7 @@ def remove_space(s):
     return re.sub(r"\s+", "", s)
 
 def remove_prefix(s): #先頭の"劇場版", "映画"はソート時には無視(「映画」が先頭につく映画はこれで問題が起きる可能性はあるが…)
-    return re.sub(r"^(劇場版|映画)", "", s).strip()
+    return re.sub(r"^(劇場版|映画|（旧作）)", "", s).strip()
     
 def remove_signs(s):
     return re.sub(r"[「」『』、。：]", "", s)
@@ -601,6 +601,16 @@ def main():
     movies += read_cinemalights()
     movies += read_aeoncinema()
     movies += read_azumaza()
+    # アドホック
+    begin_date, end_date = datetime.date(2021, 4, 9), datetime.date(2021, 4, 15)
+    上映中flg = begin_date <= __today
+    if end_date >= __today:
+        movies.append(MovieTitle("るろうに剣心 京都大火編", "アイシティシネマ", 上映中flg, "4/9（金）～4/15（木）", begin_date, end_date))
+    begin_date, end_date = datetime.date(2021, 4, 16), datetime.date(2021, 4, 22)
+    上映中flg = begin_date <= __today
+    if end_date >= __today:
+        movies.append(MovieTitle("るろうに剣心 伝説の最期編", "アイシティシネマ", 上映中flg, "4/16（金）～4/22（木）", begin_date, end_date))
+    
     #movies = json.loads(jsonstr, object_hook=as_movietitle)
     movies = sorted(movies)
     json_path = os.path.join(JSON_DIR, time_str+".json")
