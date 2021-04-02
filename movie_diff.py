@@ -1,8 +1,10 @@
 # coding: utf-8
 
-import os, glob, json, copy, datetime
+import os, glob, json, copy, datetime, time
+import pickle
 
 import getmovieinfo
+import post_mastodon
 
 def get_latest_jsonfilenames(num=1):
     jsondir = getmovieinfo.JSON_DIR
@@ -39,27 +41,147 @@ def group_titles_together(movielist):
         moviegroup_list.append(moviegroup)
     return moviegroup_list
 
-def main():
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    latest_fn, before_fn = get_latest_jsonfilenames(2)
-    latest_movies = load_json(latest_fn)
-    before_movies = load_json(before_fn)
-    
+#def group_by_date(movielist):
+
+def diff_movies(before_movies, latest_movies):
+    updated_movies = []
+    new_movies = []
     for latest_movie in latest_movies:
         if latest_movie in before_movies:
             if not latest_movie.now_showing_flg: #上映予定のみ
                 before_movie = list(filter(lambda x: latest_movie == x, before_movies))[0]
                 if latest_movie.begin_date != before_movie.begin_date: #上映開始日に変更があった場合
-                    print("Updated:", latest_movie)
+                    updated_movies.append(latest_movie)
         else:
-            print("New:", latest_movie)
-            
-    for g in group_titles_together(filter_by_date(latest_movies, datetime.date(2021,4,2))):
-        print("[", end="")
-        for m in g:
-            print(m.title, end=" ")
-            print(m.theater, ", ", end="")
-        print("]")
+            new_movies.append(latest_movie)
+    disappeared_movies = []
+    for before_movie in before_movies:
+        if before_movie not in latest_movies:
+            disappeared_movies.append(before_movie)
+    
+    return updated_movies, new_movies, disappeared_movies
+
+POSTED_PICKLE_FILE = "posted.pickle"
+TEXT_MAX = 400
+class MoviePoster():
+    def _load_pickle(self):
+        if os.path.isfile(POSTED_PICKLE_FILE):
+            with open(POSTED_PICKLE_FILE, "rb") as f:
+                return pickle.load(f)
+        else: #ファイルが存在しない
+            return [], {}
+    def save_pickle(self):
+        with open(POSTED_PICKLE_FILE, "wb") as w:
+            pickle.dump([self.posted_movies, self.posted_times], w)
+    def __init__(self):
+        self.posted_movies, self.posted_times = self._load_pickle()
+        # ここで過去のやつを削除
+        
+    def is_posted(self, movie):
+        return movie in self.posted_movies
+    def add_posted(self, movie):
+        if movie not in self.posted_movies:
+            self.posted_movies.append(movie)
+    def post(self, s):
+        post_mastodon.toot(s)
+    def post_texts(self, ss):
+        for s in ss:
+            post_mastodon.toot(s)
+            time.sleep(1)
+    def post_movies(self, movies, text_header):
+        texts = []
+        text = ""
+        for movie in movies:
+            if self.is_posted(movie):
+                print("ignored", movie)
+                continue
+            self.add_posted(movie)
+            print("posting", movie)
+            date_str = ""
+            if movie.begin_date and movie.end_date:
+                date_str = "{}({})～{}({})".format(
+                    movie.begin_date.strftime("%m/%d"),
+                    "月火水木金土日"[movie.begin_date.weekday()],
+                    movie.end_date.strftime("%m/%d"),
+                    "月火水木金土日"[movie.end_date.weekday()])
+            elif movie.begin_date:
+                date_str = "{}({})～".format(
+                    movie.begin_date.strftime("%m/%d"),
+                    "月火水木金土日"[movie.begin_date.weekday()])
+            elif movie.when:
+                date_str = movie.when
+            else:
+                continue
+            movie_str = "{} {}: {}\n".format(
+                date_str, movie.theater, movie.title)
+            if len(text+movie_str) > TEXT_MAX-len(text_header):
+                texts.append(text_header+text)
+                text = ""
+            text += movie_str
+        if text:
+            texts.append(text_header+text)
+        self.post_texts(texts)
+        self.save_pickle()
+    def post_new_movies(self, movies):
+        self.post_movies(movies, "上映予定が追加されました!\n")
+    def post_updated_movies(self, movies):
+        self.post_movies(movies, "上映日が決定しました!\n")
+    #def post_movie_group(self, movie_groups):
+    def is_posted_recently(self, when):
+        if when in self.posted_times:
+            if datetime.datetime.now() - self.posted_times[when] <= datetime.timedelta(hours=12):
+                return True
+        return False
+    def add_posted_recently(self, when):
+        self.posted_times[when] = datetime.datetime.now()
+    def post_movies_to_show(self, movies, when=""):
+        #TODO: whenとツイートした日付を記録し、12時間は同じ投稿をしないようにする
+        if self.is_posted_recently(when):
+            return
+        text_header = when + "上映開始の映画です!\n"
+        texts = []
+        text = ""
+        for group in group_titles_together(movies): #映画ごと
+            title = ""
+            theaters = []
+            for movie in group:
+                if not title:
+                    title = movie.title
+                theaters.append(movie.theater)
+            movie_str = "{}: {}\n".format(title, ", ".join(theaters))
+            if len(text + movie_str) > TEXT_MAX - len(text_header):
+                texts.append(text_header + text)
+                text = ""
+            text += movie_str
+        if text:
+            texts.append(text_header + text)
+        self.post_texts(texts)
+        self.add_posted_recently(when)
+        self.save_pickle()
+
+def main():
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    latest_fn, before_fn = get_latest_jsonfilenames(2)
+    #latest_fn, before_fn = "json/20210401-2254.json", "json/20210328-2158.json"
+    latest_movies = load_json(latest_fn)
+    before_movies = load_json(before_fn)
+    
+    updated_movies, new_movies, disappeared_movies = diff_movies(before_movies, latest_movies)
+
+    poster = MoviePoster()
+    print("新しい映画")
+    poster.post_new_movies(new_movies)
+    print("上映日決定")
+    poster.post_updated_movies(updated_movies)
+    print("消滅")
+    for mov in disappeared_movies:
+        print(mov)
+    #ここから関数分けたいね
+    print("明日の予定")
+    today = datetime.date.today()
+    todays_movies = filter_by_date(latest_movies, today+datetime.timedelta(days=1))
+    poster.post_movies_to_show(todays_movies, "今日{}({})".format(
+                    today.strftime("%m/%d"), "月火水木金土日"[today.weekday()]))
         
     #TODO:
     #a) 新しく追加された映画を通知
