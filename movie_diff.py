@@ -178,10 +178,10 @@ def main():
         print(mov)
     #ここから関数分けたいね
     print("明日の予定")
-    today = datetime.date.today()
-    todays_movies = filter_by_date(latest_movies, today+datetime.timedelta(days=1))
-    poster.post_movies_to_show(todays_movies, "今日{}({})".format(
-                    today.strftime("%m/%d"), "月火水木金土日"[today.weekday()]))
+    tomorrow = datetime.date.today() + datetime.timedelta(days=1)
+    tomorrow_movies = filter_by_date(latest_movies, tomorrow)
+    poster.post_movies_to_show(tomorrow_movies, "明日{}({})".format(
+                    tomorrow.strftime("%m/%d"), "月火水木金土日"[tomorrow.weekday()]))
         
     #TODO:
     #a) 新しく追加された映画を通知
