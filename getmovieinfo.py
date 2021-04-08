@@ -602,10 +602,6 @@ def main():
     movies += read_aeoncinema()
     movies += read_azumaza()
     # アドホック
-    begin_date, end_date = datetime.date(2021, 4, 9), datetime.date(2021, 4, 15)
-    上映中flg = begin_date <= __today
-    if end_date >= __today:
-        movies.append(MovieTitle("るろうに剣心 京都大火編", "アイシティシネマ", 上映中flg, "4/9（金）～4/15（木）", begin_date, end_date))
     begin_date, end_date = datetime.date(2021, 4, 16), datetime.date(2021, 4, 22)
     上映中flg = begin_date <= __today
     if end_date >= __today:
