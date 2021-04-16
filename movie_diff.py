@@ -1,6 +1,6 @@
 # coding: utf-8
 
-import os, glob, json, copy, datetime, time
+import os, glob, json, copy, datetime, time, sys
 import pickle
 
 import getmovieinfo
@@ -159,7 +159,21 @@ class MoviePoster():
         self.add_posted_recently(when)
         self.save_pickle()
 
-def main():
+def post_tomorrows_new(poster, latest_movies):
+    print("明日の予定")
+    tomorrow = datetime.date.today() + datetime.timedelta(days=1)
+    tomorrow_movies = filter_by_date(latest_movies, tomorrow)
+    poster.post_movies_to_show(tomorrow_movies, "明日{}({})".format(
+                    tomorrow.strftime("%m/%d"), "月火水木金土日"[tomorrow.weekday()]))
+
+def post_todays_new(poster, latest_movies):
+    print("今日の予定")
+    today = datetime.date.today()
+    today_movies = filter_by_date(latest_movies, today)
+    poster.post_movies_to_show(today_movies, "今日{}({})".format(
+                    today.strftime("%m/%d"), "月火水木金土日"[today.weekday()]))
+
+def main(argv):
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     latest_fn, before_fn = get_latest_jsonfilenames(2)
     #latest_fn, before_fn = "json/20210401-2254.json", "json/20210328-2158.json"
@@ -177,12 +191,13 @@ def main():
     for mov in disappeared_movies:
         print(mov)
     #ここから関数分けたいね
-    print("明日の予定")
-    tomorrow = datetime.date.today() + datetime.timedelta(days=1)
-    tomorrow_movies = filter_by_date(latest_movies, tomorrow)
-    poster.post_movies_to_show(tomorrow_movies, "明日{}({})".format(
-                    tomorrow.strftime("%m/%d"), "月火水木金土日"[tomorrow.weekday()]))
-        
+    if len(argv) == 1:
+        post_tomorrows_new(poster, latest_movies)
+    else:
+        if argv[1] == "today":
+            post_todays_new(poster, latest_movies)
+        else:
+            print("オプションが分かりません。")
     #TODO:
     #a) 新しく追加された映画を通知
     #b) 次の日やその週の上映開始予定のものを通知
@@ -192,4 +207,4 @@ def main():
     #投稿が被らない様にキャッシュする
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv)
