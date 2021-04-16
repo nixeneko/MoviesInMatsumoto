@@ -12,7 +12,7 @@ import os, re, datetime, json
 import bs4
 
 # そのうちHTTPSになるかもしれない。そうしたら更新しないと…
-THEATER_URL_DICT = {"アイシティシネマ": "http://www.fromeastcinema.com/",
+THEATER_URL_DICT = {"アイシティシネマ": "http://www.inouedp.co.jp/schedule/",
                     "イオンシネマ松本": "https://www.aeoncinema.com/cinema/matsumoto/",
                     "シネマライツ": "http://cinema-lights8.com/",
                     "東座": "http://www.fromeastcinema.com/"}
@@ -602,10 +602,10 @@ def main():
     movies += read_aeoncinema()
     movies += read_azumaza()
     # アドホック
-    begin_date, end_date = datetime.date(2021, 4, 16), datetime.date(2021, 4, 22)
-    上映中flg = begin_date <= __today
-    if end_date >= __today:
-        movies.append(MovieTitle("るろうに剣心 伝説の最期編", "アイシティシネマ", 上映中flg, "4/16（金）～4/22（木）", begin_date, end_date))
+    # begin_date, end_date = datetime.date(2021, 4, 16), datetime.date(2021, 4, 22)
+    # 上映中flg = begin_date <= __today
+    # if end_date >= __today:
+        # movies.append(MovieTitle("るろうに剣心 伝説の最期編", "アイシティシネマ", 上映中flg, "4/16（金）～4/22（木）", begin_date, end_date))
     
     #movies = json.loads(jsonstr, object_hook=as_movietitle)
     movies = sorted(movies)
