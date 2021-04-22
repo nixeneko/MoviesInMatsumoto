@@ -407,6 +407,8 @@ def read_cinemalights():
             if 上映中flg:
                 if not end_date:
                     end_date = date_str2date(when)
+                if when.endswith("休映"):
+                    begin_date, end_date = None, None
             else:
                 if not begin_date:
                     begin_date = date_str2date(when)
