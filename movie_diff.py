@@ -125,7 +125,10 @@ class MoviePoster():
     def post_new_movies(self, movies):
         self.post_movies(movies, "上映予定が追加されました!\n")
     def post_updated_movies(self, movies):
-        self.post_movies(movies, "上映日が決定しました!\n")
+        movies_added_roadshow_date = [m for m in movies if m.begin_date]
+        self.post_movies(movies_added_roadshow_date, "上映日が決定しました!\n")
+        movies_removed_roadshow_date = [m for m in movies if not m.begin_date]
+        self.post_movies(movies_removed_roadshow_date, "上映予定が変更になりました。\n")
     #def post_movie_group(self, movie_groups):
     def is_posted_recently(self, when):
         if when in self.posted_times:
@@ -185,7 +188,7 @@ def main(argv):
     poster = MoviePoster()
     print("新しい映画")
     poster.post_new_movies(new_movies)
-    print("上映日決定")
+    print("上映日変更")
     poster.post_updated_movies(updated_movies)
     print("消滅")
     for mov in disappeared_movies:
