@@ -364,7 +364,7 @@ def read_icitycinema():
             if when:
                 if when.endswith("公開") or when.endswith("公開予定"):
                     begin_date = date_str2date(when)
-                elif when.endswith("期間限定上映"):
+                elif when.endswith("期間限定上映") or when.endswith("期間限定上映予定"):
                     begin_date, end_date = date_range_str2dates(when)
                     if begin_date is None: #当然end_dateもNone
                         begin_date = date_str2date(when)
@@ -407,7 +407,8 @@ def read_cinemalights():
             if 上映中flg:
                 if not end_date:
                     end_date = date_str2date(when)
-                if when.endswith("休映"):
+                #if when.endswith("休映"):
+                if "休映" in when: #"～休映" "平日休映～迄"
                     begin_date, end_date = None, None
             else:
                 if not begin_date:

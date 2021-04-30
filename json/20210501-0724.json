@@ -196,7 +196,7 @@
     "now_showing_flg": true,
     "when": "平日休映5/9迄",
     "begin_date": null,
-    "end_date": "2021-05-09",
+    "end_date": null,
     "url": "https://2021spring.precure-movie.com/pc/"
   },
   {
@@ -446,7 +446,7 @@
     "now_showing_flg": false,
     "when": "5/7(金)～5/20(木)期間限定上映予定",
     "begin_date": "2021-05-07",
-    "end_date": null,
+    "end_date": "2021-05-20",
     "url": "https://gaga.ne.jp/junkhead/"
   },
   {
