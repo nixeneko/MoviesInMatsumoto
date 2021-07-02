@@ -298,7 +298,7 @@ def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土�
         day = int(day_str)
         end_date = datetime.date(year, month, day)
         if begin_date is None:
-            if today > end_date:
+            if today - end_date > datetime.timedelta(days=90): #3か月以上前
                 end_date = datetime.date(year+1, month, day)
         elif end_date < begin_date: #開始時期よりも終了時期の方が早い
                 end_date = datetime.date(year+1, month, day)
