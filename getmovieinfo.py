@@ -91,7 +91,12 @@ def remove_multiple_space(s):
 def remove_space(s):
     return re.sub(r"\s+", "", s)
 
-def remove_prefix(s): #先頭の"劇場版", "映画"はソート時には無視(「映画」が先頭につく映画はこれで問題が起きる可能性はあるが…)
+def remove_prefix(s): #先頭の"劇場版", "映画"等はソート時には無視(「映画」が先頭につく映画はこれで問題が起きる可能性はあるが…)
+    # 残したい場合はリストに突っ込んで個別対応する
+    EXCLUDE_LIST = ["映画大好きポンポさん"]
+    for exclude_name in EXCLUDE_LIST:
+        if s.startswith(exclude_name):
+            return s
     return re.sub(r"^(劇場版|映画|（旧作）|\(旧作\))", "", s).strip()
     
 def remove_signs(s):
