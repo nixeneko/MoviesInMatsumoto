@@ -127,6 +127,10 @@ class MovieTitle():
         self.begin_date = begin_date
         self.end_date = end_date
         self.url = url
+        #上映日より後なら上映中にする
+        if self.now_showing_flg == False: #上映予定
+            if self.begin_date and (self.begin_date <= datetime.date.today()):
+                self.now_showing_flg = True
         
     def __str__(self):
         上映中か予定か = "上映中" if self.now_showing_flg else "上映予定"
