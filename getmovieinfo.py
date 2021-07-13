@@ -369,6 +369,14 @@ def read_icitycinema():
                     movie_title += l
         
         if movie_title:
+            # もしmovie_titleが"※PG12" "※R15+" "※R18+"で終わるなら取り除く (このままだと全角半角で問題になる可能性あり)
+            if movie_title.endswith("※PG12"):
+                movie_title = movie_title.replace("※PG12", "").strip()
+            elif movie_title.endswith("※R15+"):
+                movie_title = movie_title.replace("※R15+", "").strip()
+            elif movie_title.endswith("※R18+"):
+                movie_title = movie_title.replace("※R18+", "").strip()
+                
             begin_date, end_date = None, None
             if when:
                 if when.endswith("公開") or when.endswith("公開予定"):
