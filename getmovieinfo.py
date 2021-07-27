@@ -100,8 +100,8 @@ def remove_prefix(s): #先頭の"劇場版", "映画"等はソート時には無
     return re.sub(r"^(劇場版|映画|（旧作）|\(旧作\))", "", s).strip()
     
 def remove_signs(s):
-    return re.sub(r"[「」『』、。：・/／－—−–\-～〜~]", "", s)
-
+    return re.sub(r"""[「」『』"“”、。.．:：!！・/／ー－—−–\-～〜~]""", "", s)
+    #音引き"ー"はあってもいいけど、入力ミスにより別の横棒になっている場合があり、消した方が安定する
 def hira_to_kata(s): #http://python-remrin.hatenadiary.jp/entry/2017/04/26/123458
     return "".join([chr(ord(c) + 96) if ("ぁ" <= c <= "ゖ") else c for c in s])
     
