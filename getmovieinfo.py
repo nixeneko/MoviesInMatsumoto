@@ -106,7 +106,7 @@ def hira_to_kata(s): #http://python-remrin.hatenadiary.jp/entry/2017/04/26/12345
     return "".join([chr(ord(c) + 96) if ("ぁ" <= c <= "ゖ") else c for c in s])
     
 def get_title_for_sorting(s):
-    return remove_space(hira_to_kata(remove_signs(remove_prefix(s.lower()))))
+    return remove_space(hira_to_kata(remove_prefix(remove_signs(s.lower()))))
 
 class MovieTitle():
     def __init__(self, 
