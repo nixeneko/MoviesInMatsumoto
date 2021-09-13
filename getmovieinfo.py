@@ -97,7 +97,7 @@ def remove_prefix(s): #先頭の"劇場版", "映画"等はソート時には無
     for exclude_name in EXCLUDE_LIST:
         if s.startswith(exclude_name):
             return s
-    return re.sub(r"^(劇場版|映画|（旧作）|\(旧作\))", "", s).strip()
+    return re.sub(r"^(劇場版|映画|劇場編集版|（旧作）|\(旧作\))", "", s).strip()
     
 def remove_signs(s):
     return re.sub(r"""[「」『』"“”、。.．:：!！・/／ー－—−–\-～〜~]""", "", s)
