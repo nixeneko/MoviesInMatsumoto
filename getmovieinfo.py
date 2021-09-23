@@ -227,8 +227,10 @@ class MovieTitle():
         else: #上映予定
             if self.begin_date:
                 tag_str += '<td class="start_date">{}</td>'.format(
-                                self.begin_date.strftime("%Y/%m/%d({})～")
-                                               .format("月火水木金土日"[self.begin_date.weekday()]))
+                                self.begin_date.strftime("%Y/%m/%d({})")
+                                               .format("月火水木金土日"[self.begin_date.weekday()])
+                                + ("" if self.begin_date == self.end_date else "～") #1日だけの上映の場合は"～"を入れない
+                                )
             else:
                 tag_str += '<td class="start_date">{}</td>'.format(self.when)
         if self.end_date:
@@ -525,8 +527,10 @@ def read_azumaza():
             url = parent.find("a").get("href")
             
             title = tag.get_text().strip()
+            # 「原題:」以降は消す
+            title = re.sub(r"原題[:：].+$", "", title)
+
             when = grandparent.find(class_="t16").get_text()
-            
             begin_date = None
             end_date = None
             if when:
