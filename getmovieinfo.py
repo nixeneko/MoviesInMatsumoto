@@ -529,7 +529,7 @@ def read_azumaza():
             title = tag.get_text().strip()
             # 「原題:」以降は消す
             title = re.sub(r"原題[:：].+$", "", title)
-
+            
             when = grandparent.find(class_="t16").get_text()
             begin_date = None
             end_date = None
@@ -543,7 +543,7 @@ def read_azumaza():
             dict_key = begin_date.isoformat() + remove_multiple_space(title).split(" ")[0] #開始日とスペースの前の文字列だけで同一判定
             #begin_dateがNoneだとエラー出るなこれ
             movie_dict[dict_key] = movie
-            
+
         上映中flg = False
         sq_gray = html.find("table", class_="sq_gray")
         count_row = 0
@@ -581,9 +581,15 @@ def read_azumaza():
                                             when, begin_date, end_date, url) #url信用できない
                         #movie_list.append(movie)
                         dict_key = begin_date.isoformat() + remove_multiple_space(title).split(" ")[0] #開始日とスペースの前の文字列だけで同一判定
-                        if dict_key not in movie_dict:
+                        overlap_flg = False
+                        for key in movie_dict.keys():
+                            if dict_key.startswith(key) or key.startswith(dict_key):
+                                if len(dict_key) > 13 and len(key) > 13: #一応文字数が少なすぎるとアレかなあというのでつけてみている 10文字は日付
+                                    overlap_flg = True
+                        #if dict_key not in movie_dict:
+                        if not overlap_flg:
                             movie_dict[dict_key] = movie
-                
+                        
                 list_title = []
                 list_when = []
                 list_url = []
