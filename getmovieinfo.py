@@ -580,7 +580,10 @@ def read_azumaza():
                         movie = MovieTitle(title, theater, 上映中flg, 
                                             when, begin_date, end_date, url) #url信用できない
                         #movie_list.append(movie)
-                        dict_key = begin_date.isoformat() + remove_multiple_space(title).split(" ")[0] #開始日とスペースの前の文字列だけで同一判定
+                        if begin_date:
+                            dict_key = begin_date.isoformat() + remove_multiple_space(title).split(" ")[0] #開始日とスペースの前の文字列だけで同一判定
+                        else:
+                            dict_key = remove_multiple_space(title).split(" ")[0] #開始日が不明ならスペースの前の文字列だけで同一判定
                         overlap_flg = False
                         for key in movie_dict.keys():
                             if dict_key.startswith(key) or key.startswith(dict_key):
