@@ -528,7 +528,7 @@ def read_azumaza():
             
             title = tag.get_text().strip()
             # 「原題:」以降は消す
-            title = re.sub(r"原題[:：].+$", "", title)
+            title = re.sub(r"(原題|英題)[:：].+$", "", title)
             
             when = grandparent.find(class_="t16").get_text()
             begin_date = None
