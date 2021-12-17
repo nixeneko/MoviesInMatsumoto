@@ -194,13 +194,17 @@ def main(argv):
     for mov in disappeared_movies:
         print(mov)
     #ここから関数分けたいね
-    if len(argv) == 1:
-        post_tomorrows_new(poster, latest_movies)
-    else:
-        if argv[1] == "today":
-            post_todays_new(poster, latest_movies)
-        else:
-            print("オプションが分かりません。")
+    # if len(argv) == 1:
+        # post_tomorrows_new(poster, latest_movies)
+    # else:
+        # if argv[1] == "today":
+            # post_todays_new(poster, latest_movies)
+        # else:
+            # print("オプションが分かりません。")
+    post_todays_new(poster, latest_movies)
+    post_tomorrows_new(poster, latest_movies)
+    #これでいいや
+    
     #TODO:
     #a) 新しく追加された映画を通知
     #b) 次の日やその週の上映開始予定のものを通知
