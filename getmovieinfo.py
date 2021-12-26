@@ -274,6 +274,7 @@ def date_str2date(s): # 7/10(土)～ または ～4月2日（金） とか
 def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土）～4月2日（金）
     #年は入力されないので適当に設定する
     #年を今年に設定した場合に開始日が今日の3か月以上前になるなら翌年とする
+    #年が入っている表記を確認: 12月25日（土）～2022年1月14日
     if not s: return None, None
     begin_date = None
     end_date = None
@@ -291,11 +292,20 @@ def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土�
         if today - begin_date > datetime.timedelta(days=90): #3か月以上前
             year+=1
             begin_date = datetime.date(year, month, day)
-    r_end = r"[～〜~]\D*(\d{1,2}[/／月]\d{1,2})"
+    r_end = r"[～〜~]\D*((\d{2,4})[/／年])?(\d{1,2}[/／月]\d{1,2})"
     m_end = re.search(r_end, s)
     if m_end:
         # end
-        month_str, day_str = m_end[1].replace("／", "/").replace("月", "/").split("/")
+        # このコード、作ってみたけどゆーて要らん気がする
+        # year_temp = m_end[2] #year
+        # if year_temp: 
+            # year_tmp_int = int(year_temp)
+            # if year_tmp_int < 100: #2桁以内だったら西暦4桁にする
+                # year = year_tmp_int + 2000
+            # else:
+                # year = year_tmp_int
+                
+        month_str, day_str = m_end[3].replace("／", "/").replace("月", "/").split("/")
         month = int(month_str)
         day = int(day_str)
         end_date = datetime.date(year, month, day)
