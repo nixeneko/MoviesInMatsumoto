@@ -275,6 +275,7 @@ def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土�
     #年は入力されないので適当に設定する
     #年を今年に設定した場合に開始日が今日の3か月以上前になるなら翌年とする
     #年が入っている表記を確認: 12月25日（土）～2022年1月14日
+    #開始日が去年の場合がある
     if not s: return None, None
     begin_date = None
     end_date = None
@@ -291,6 +292,9 @@ def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土�
         begin_date = datetime.date(year, month, day)
         if today - begin_date > datetime.timedelta(days=90): #3か月以上前
             year+=1
+            begin_date = datetime.date(year, month, day)
+        elif begin_date - today > datetime.timedelta(days=300): #10カ月以上先
+            year -= 1
             begin_date = datetime.date(year, month, day)
     r_end = r"[～〜~]\D*((\d{2,4})[/／年])?(\d{1,2}[/／月]\d{1,2})"
     m_end = re.search(r_end, s)
@@ -363,6 +367,7 @@ def read_icitycinema():
                         or l.endswith("上映予定") \
                         or l.endswith("上映終了") \
                         or l.endswith("上映終了予定") \
+                        or l.endswith("期間限定上映予定") \
                         or l.endswith("公開日未定"):
                     title_state += 1
                     when += l
@@ -397,7 +402,10 @@ def read_icitycinema():
                 elif when.endswith("期間限定上映") or when.endswith("期間限定上映予定"):
                     begin_date, end_date = date_range_str2dates(when)
                     if begin_date is None: #当然end_dateもNone
-                        begin_date = date_str2date(when)
+                        if 上映中flg: #上映中作品もこの表記で終了日が書かれることがある
+                            end_date = date_str2date(when)
+                        else:
+                            begin_date = date_str2date(when)
                 elif when.endswith("上映終了") or when.endswith("上映終了予定"):
                     end_date = date_str2date(when)
                 else:
