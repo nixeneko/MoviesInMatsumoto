@@ -100,6 +100,16 @@
     "url": "https://asa10.eiga.com/2022/"
   },
   {
+    "title": "【午前十時の映画祭12】 ゴッドファーザー PARTⅡ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "4/8（金）～4/14（木）",
+    "begin_date": "2022-04-08",
+    "end_date": "2022-04-14",
+    "url": "https://asa10.eiga.com/2022/"
+  },
+  {
     "title": "アクターズ・ショート・フィルム2",
     "theater": "シネマライツ",
     "theater_url": "http://cinema-lights8.com/",
@@ -240,6 +250,16 @@
     "url": "https://gaga.ne.jp/coda/"
   },
   {
+    "title": "コーダ あいのうた",
+    "theater": "イオンシネマ松本",
+    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
+    "now_showing_flg": true,
+    "when": "4月8日（金）",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/111089/index.html"
+  },
+  {
     "title": "コーダあいのうた",
     "theater": "シネマライツ",
     "theater_url": "http://cinema-lights8.com/",
@@ -276,7 +296,7 @@
     "now_showing_flg": true,
     "when": "4/14(木)終了予定",
     "begin_date": null,
-    "end_date": null,
+    "end_date": "2022-04-14",
     "url": "https://confidenceman-movie.com/"
   },
   {
@@ -320,6 +340,16 @@
     "url": "https://wwws.warnerbros.co.jp/thebatman-movie/"
   },
   {
+    "title": "シネマ歌舞伎 桜姫東文章 上の巻/下の巻",
+    "theater": "アイシティシネマ",
+    "theater_url": "http://www.inouedp.co.jp/schedule/",
+    "now_showing_flg": true,
+    "when": "上の巻　4/8(金)公開下の巻　4/29(金)公開",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://www.shochiku.co.jp/cinemakabuki/"
+  },
+  {
     "title": "映画しまじろう しまじろうと キラキラおうこくのおうじさま",
     "theater": "アイシティシネマ",
     "theater_url": "http://www.inouedp.co.jp/schedule/",
@@ -338,6 +368,56 @@
     "begin_date": null,
     "end_date": "2022-04-14",
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/113532/index.html"
+  },
+  {
+    "title": "チェリまほ THE MOVIE 30歳まで童貞だと魔法使いになれるらしい",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "4/8（金）～",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://cherimaho-movie.com/"
+  },
+  {
+    "title": "とんび",
+    "theater": "アイシティシネマ",
+    "theater_url": "http://www.inouedp.co.jp/schedule/",
+    "now_showing_flg": true,
+    "when": "4/8(金)公開",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://movies.kadokawa.co.jp/tonbi/"
+  },
+  {
+    "title": "とんび",
+    "theater": "イオンシネマ松本",
+    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
+    "now_showing_flg": true,
+    "when": "4月8日（金）",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/95393/index.html"
+  },
+  {
+    "title": "とんび",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "4/8（金）～",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://movies.kadokawa.co.jp/tonbi/"
+  },
+  {
+    "title": "ドライブ・マイ・カー",
+    "theater": "アイシティシネマ",
+    "theater_url": "http://www.inouedp.co.jp/schedule/",
+    "now_showing_flg": true,
+    "when": "4/8(金)～期間限定上映",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://dmc.bitters.co.jp/"
   },
   {
     "title": "ドライブ・マイ・カー",
@@ -440,14 +520,54 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/110402/index.html"
   },
   {
+    "title": "ヒットマンズ・ワイフズ・ボディガード",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "4/8（金）～",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://hitmanswifesbodyguard.jp/"
+  },
+  {
     "title": "ひまわり 50周年HDレストア版",
     "theater": "アイシティシネマ",
     "theater_url": "http://www.inouedp.co.jp/schedule/",
     "now_showing_flg": true,
     "when": "4/14(木)終了予定",
     "begin_date": null,
-    "end_date": null,
+    "end_date": "2022-04-14",
     "url": "http://himawari-2020.com/"
+  },
+  {
+    "title": "ファンタスティック・ビーストと ダンブルドアの秘密",
+    "theater": "アイシティシネマ",
+    "theater_url": "http://www.inouedp.co.jp/schedule/",
+    "now_showing_flg": true,
+    "when": "4/8(金)公開",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://wwws.warnerbros.co.jp/fantasticbeasts/"
+  },
+  {
+    "title": "ファンタスティック・ビーストとダンブルドアの秘密",
+    "theater": "イオンシネマ松本",
+    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
+    "now_showing_flg": true,
+    "when": "4月8日（金）",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/111702/index.html"
+  },
+  {
+    "title": "ファンタスティック・ビーストとダンブルドアの秘密",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "4/8（金）～",
+    "begin_date": "2022-04-08",
+    "end_date": null,
+    "url": "https://wwws.warnerbros.co.jp/fantasticbeasts/index.html"
   },
   {
     "title": "ベルファスト",
@@ -648,126 +768,6 @@
     "begin_date": null,
     "end_date": "2022-04-14",
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/109146/index.html"
-  },
-  {
-    "title": "【午前十時の映画祭12】 ゴッドファーザー PARTⅡ",
-    "theater": "シネマライツ",
-    "theater_url": "http://cinema-lights8.com/",
-    "now_showing_flg": false,
-    "when": "4/8（金）～4/14（木）",
-    "begin_date": "2022-04-08",
-    "end_date": "2022-04-14",
-    "url": "https://asa10.eiga.com/2022/"
-  },
-  {
-    "title": "コーダ あいのうた",
-    "theater": "イオンシネマ松本",
-    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
-    "now_showing_flg": false,
-    "when": "4月8日（金）",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/111089/index.html"
-  },
-  {
-    "title": "シネマ歌舞伎 桜姫東文章 上の巻/下の巻",
-    "theater": "アイシティシネマ",
-    "theater_url": "http://www.inouedp.co.jp/schedule/",
-    "now_showing_flg": false,
-    "when": "上の巻　4/8(金)公開下の巻　4/29(金)公開",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://www.shochiku.co.jp/cinemakabuki/"
-  },
-  {
-    "title": "チェリまほ THE MOVIE 30歳まで童貞だと魔法使いになれるらしい",
-    "theater": "シネマライツ",
-    "theater_url": "http://cinema-lights8.com/",
-    "now_showing_flg": false,
-    "when": "4/8（金）～",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://cherimaho-movie.com/"
-  },
-  {
-    "title": "とんび",
-    "theater": "アイシティシネマ",
-    "theater_url": "http://www.inouedp.co.jp/schedule/",
-    "now_showing_flg": false,
-    "when": "4/8(金)公開",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://movies.kadokawa.co.jp/tonbi/"
-  },
-  {
-    "title": "とんび",
-    "theater": "イオンシネマ松本",
-    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
-    "now_showing_flg": false,
-    "when": "4月8日（金）",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/95393/index.html"
-  },
-  {
-    "title": "とんび",
-    "theater": "シネマライツ",
-    "theater_url": "http://cinema-lights8.com/",
-    "now_showing_flg": false,
-    "when": "4/8（金）～",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://movies.kadokawa.co.jp/tonbi/"
-  },
-  {
-    "title": "ドライブ・マイ・カー",
-    "theater": "アイシティシネマ",
-    "theater_url": "http://www.inouedp.co.jp/schedule/",
-    "now_showing_flg": false,
-    "when": "4/8(金)～期間限定上映",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://dmc.bitters.co.jp/"
-  },
-  {
-    "title": "ヒットマンズ・ワイフズ・ボディガード",
-    "theater": "シネマライツ",
-    "theater_url": "http://cinema-lights8.com/",
-    "now_showing_flg": false,
-    "when": "4/8（金）～",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://hitmanswifesbodyguard.jp/"
-  },
-  {
-    "title": "ファンタスティック・ビーストと ダンブルドアの秘密",
-    "theater": "アイシティシネマ",
-    "theater_url": "http://www.inouedp.co.jp/schedule/",
-    "now_showing_flg": false,
-    "when": "4/8(金)公開",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://wwws.warnerbros.co.jp/fantasticbeasts/"
-  },
-  {
-    "title": "ファンタスティック・ビーストとダンブルドアの秘密",
-    "theater": "イオンシネマ松本",
-    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
-    "now_showing_flg": false,
-    "when": "4月8日（金）",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/111702/index.html"
-  },
-  {
-    "title": "ファンタスティック・ビーストとダンブルドアの秘密",
-    "theater": "シネマライツ",
-    "theater_url": "http://cinema-lights8.com/",
-    "now_showing_flg": false,
-    "when": "4/8（金）～",
-    "begin_date": "2022-04-08",
-    "end_date": null,
-    "url": "https://wwws.warnerbros.co.jp/fantasticbeasts/index.html"
   },
   {
     "title": "白い牛のバラッド",
