@@ -424,6 +424,8 @@ def read_cinemalights():
     movie_list = []
     html = get_parsed_html_from_file(fn)
     
+    上映中count = 0 #「上映中」出現前には上映中とする
+    
     tbl = html.find(class_="l_table")
     for tag in tbl.find_all(class_="movie_title"):
         _data = tag.find(class_="data")
@@ -438,20 +440,33 @@ def read_cinemalights():
         title = remove_multiple_space(p_title.get_text().strip())
         url = p_title.find("a").get("href")
         
-        when = data if data != "上映中" else ""
-        上映中flg = bool(_data)
-        
+        #when = data if data != "上映中" else ""
+        #上映中flg = bool(_data)
+        if data == "上映中":
+            when = ""
+            上映中flg = True
+            上映中count += 1
+        else:
+            上映中flg = False
+            when = data
+            
+        #終了予定が"～2/3"のようになっている場合に開始日としても取られてしまう問題が発生
+        #dataとdata2で上映予定かどうかが区別できなくなったことにより発生
+        #data/data2を区別せず、内容テキストにより判定することにする
         begin_date, end_date = date_range_str2dates(when) #whenが空ならNone, None
-        if when:
-            if 上映中flg:
-                if not end_date:
-                    end_date = date_str2date(when)
-                #if when.endswith("休映"):
-                if "休映" in when: #"～休映" "平日休映～迄"
-                    begin_date, end_date = None, None
-            else:
-                if not begin_date:
-                    begin_date = date_str2date(when)
+        if begin_date is None and end_date: #終了だけが指定されている場合、上映中とする
+            上映中flg = True
+        if when: #上映中flg==Falseになっている
+            if "休映" in when: #"～休映" "平日休映～迄"
+                begin_date, end_date = None, None
+                上映中flg = True
+            if begin_date is None and end_date is None: #幅で指定されてない場合
+                some_kind_of_date = date_str2date(when)
+                if some_kind_of_date: #何らかの日付が指定されていれば
+                    if 上映中count > 0: #これから上映
+                        begin_date = some_kind_of_date
+                    else:
+                        end_date = some_kind_of_date
         # when ~ "～\d{1,2}/\d{1,2}（.+）", "上映中", "\d{1,2}/\d{1,2}（.+）～?", "\d{2,4}年公開", "近日公開"
         
         if title:
