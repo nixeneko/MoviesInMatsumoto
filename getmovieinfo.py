@@ -442,7 +442,7 @@ def read_cinemalights():
         
         #when = data if data != "上映中" else ""
         #上映中flg = bool(_data)
-        if data == "上映中":
+        if "上映中" in data: #"～上映中"に対応
             when = ""
             上映中flg = True
             上映中count += 1
