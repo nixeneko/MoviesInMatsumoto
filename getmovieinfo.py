@@ -9,6 +9,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer,
 
 import urllib.request, urllib.parse
 import os, re, datetime, json
+import unicodedata
 import bs4
 
 # そのうちHTTPSになるかもしれない。そうしたら更新しないと…
@@ -106,7 +107,10 @@ def hira_to_kata(s): #http://python-remrin.hatenadiary.jp/entry/2017/04/26/12345
     return "".join([chr(ord(c) + 96) if ("ぁ" <= c <= "ゖ") else c for c in s])
     
 def get_title_for_sorting(s):
-    return remove_space(hira_to_kata(remove_prefix(remove_signs(s.lower()))))
+    #Unicode正規化を通したほうが良い、全角英字などに対応するため
+    txt = unicodedata.normalize('NFKC', s)
+    print(txt)
+    return remove_space(hira_to_kata(remove_prefix(remove_signs(txt.lower()))))
 
 class MovieTitle():
     def __init__(self, 
@@ -365,6 +369,7 @@ def read_icitycinema():
                         or l.endswith("公開予定") \
                         or l.endswith("期間限定上映") \
                         or l.endswith("上映予定") \
+                        or l.endswith("限定上映予定") \
                         or l.endswith("上映終了") \
                         or l.endswith("上映終了予定") \
                         or l.endswith("終了予定") \
@@ -400,7 +405,7 @@ def read_icitycinema():
             if when:
                 if when.endswith("公開") or when.endswith("公開予定"):
                     begin_date = date_str2date(when)
-                elif when.endswith("期間限定上映") or when.endswith("期間限定上映予定"):
+                elif when.endswith("期間限定上映") or when.endswith("期間限定上映予定") or when.endswith("限定上映予定"):
                     begin_date, end_date = date_range_str2dates(when)
                     if begin_date is None: #当然end_dateもNone
                         if 上映中flg: #上映中作品もこの表記で終了日が書かれることがある

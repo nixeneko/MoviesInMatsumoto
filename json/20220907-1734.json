@@ -70,6 +70,16 @@
     "url": "https://wwws.warnerbros.co.jp/tang-movie/"
   },
   {
+    "title": "ＴＡＮＧ タング",
+    "theater": "イオンシネマ松本",
+    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/109640/index.html"
+  },
+  {
     "title": "TANG/タング",
     "theater": "シネマライツ",
     "theater_url": "http://cinema-lights8.com/",
@@ -170,16 +180,6 @@
     "url": "http://utapri-movie.com/"
   },
   {
-    "title": "キングダム2 遥かなる大地へ",
-    "theater": "シネマライツ",
-    "theater_url": "http://cinema-lights8.com/",
-    "now_showing_flg": true,
-    "when": "",
-    "begin_date": null,
-    "end_date": null,
-    "url": "https://kingdom-the-movie.jp/"
-  },
-  {
     "title": "キングダム２ 遙かなる大地へ",
     "theater": "アイシティシネマ",
     "theater_url": "http://www.inouedp.co.jp/schedule/",
@@ -198,6 +198,16 @@
     "begin_date": null,
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/83225/index.html"
+  },
+  {
+    "title": "キングダム2 遥かなる大地へ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://kingdom-the-movie.jp/"
   },
   {
     "title": "グリーンバレット",
@@ -530,14 +540,24 @@
     "url": "https://gaga.ne.jp/ongakutai/"
   },
   {
-    "title": "ＴＡＮＧ タング",
-    "theater": "イオンシネマ松本",
-    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
-    "now_showing_flg": true,
-    "when": "",
-    "begin_date": null,
+    "title": "劇場版『ＧのレコンギスタⅣ』",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "9/9(金)～",
+    "begin_date": "2022-09-09",
     "end_date": null,
-    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/109640/index.html"
+    "url": "http://www.g-reco.net/"
+  },
+  {
+    "title": "劇場版『ＧのレコンギスタⅤ』",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "9/9(金)～",
+    "begin_date": "2022-09-09",
+    "end_date": null,
+    "url": "http://www.g-reco.net/"
   },
   {
     "title": "HiGH&LOW THE WORST X",
@@ -638,26 +658,6 @@
     "begin_date": "2022-09-09",
     "end_date": null,
     "url": "https://hyakka-movie.toho.co.jp/"
-  },
-  {
-    "title": "劇場版『ＧのレコンギスタⅣ』",
-    "theater": "シネマライツ",
-    "theater_url": "http://cinema-lights8.com/",
-    "now_showing_flg": false,
-    "when": "9/9(金)～",
-    "begin_date": "2022-09-09",
-    "end_date": null,
-    "url": "http://www.g-reco.net/"
-  },
-  {
-    "title": "劇場版『ＧのレコンギスタⅤ』",
-    "theater": "シネマライツ",
-    "theater_url": "http://cinema-lights8.com/",
-    "now_showing_flg": false,
-    "when": "9/9(金)～",
-    "begin_date": "2022-09-09",
-    "end_date": null,
-    "url": "http://www.g-reco.net/"
   },
   {
     "title": "花椒の味",
@@ -1116,7 +1116,7 @@
     "now_showing_flg": false,
     "when": "10/7(金)～10/27(木)限定上映予定",
     "begin_date": "2022-10-07",
-    "end_date": null,
+    "end_date": "2022-10-27",
     "url": "https://chicostage-cinema.com/"
   },
   {
@@ -1300,6 +1300,16 @@
     "url": "https://movies.shochiku.co.jp/mimisuma-movie/"
   },
   {
+    "title": "ＲＲＲ",
+    "theater": "イオンシネマ松本",
+    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
+    "now_showing_flg": false,
+    "when": "10月21日（金）",
+    "begin_date": "2022-10-21",
+    "end_date": null,
+    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/129206/index.html"
+  },
+  {
     "title": "【午前十時の映画祭12】 レイジング・ブル",
     "theater": "シネマライツ",
     "theater_url": "http://cinema-lights8.com/",
@@ -1328,16 +1338,6 @@
     "begin_date": "2022-10-21",
     "end_date": null,
     "url": "https://senboku-movie.jp/"
-  },
-  {
-    "title": "ＲＲＲ",
-    "theater": "イオンシネマ松本",
-    "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
-    "now_showing_flg": false,
-    "when": "10月21日（金）",
-    "begin_date": "2022-10-21",
-    "end_date": null,
-    "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/129206/index.html"
   },
   {
     "title": "グロリアス世界を動かした女たち",
