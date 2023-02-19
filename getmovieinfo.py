@@ -13,14 +13,14 @@ import unicodedata
 import bs4
 
 # そのうちHTTPSになるかもしれない。そうしたら更新しないと…
-THEATER_URL_DICT = {"アイシティシネマ": "http://www.inouedp.co.jp/schedule/",
+THEATER_URL_DICT = {"アイシティシネマ": "https://www.inouedp.co.jp/icitycinema/",
                     "イオンシネマ松本": "https://www.aeoncinema.com/cinema/matsumoto/",
                     "シネマライツ": "http://cinema-lights8.com/",
                     "東座": "http://www.fromeastcinema.com/"}
 #作品一覧データを取得するURL
 URL_LIST = [
     ("http://cinema-lights8.com/", "lights.html"),
-    ("http://www.inouedp.co.jp/schedule/", "icity.html"),
+    ("https://www.inouedp.co.jp/icitycinema/timetable/", "icity.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/index.html", "aeon_current.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon.html", "aeon_coming.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon2.html", "aeon_coming2.html"),
@@ -109,7 +109,7 @@ def hira_to_kata(s): #http://python-remrin.hatenadiary.jp/entry/2017/04/26/12345
 def get_title_for_sorting(s):
     #Unicode正規化を通したほうが良い、全角英字などに対応するため
     txt = unicodedata.normalize('NFKC', s)
-    print(txt)
+    #print(txt)
     return remove_space(hira_to_kata(remove_prefix(remove_signs(txt.lower()))))
 
 class MovieTitle():
