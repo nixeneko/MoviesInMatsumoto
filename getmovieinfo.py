@@ -20,7 +20,8 @@ THEATER_URL_DICT = {"アイシティシネマ": "https://www.inouedp.co.jp/icity
 #作品一覧データを取得するURL
 URL_LIST = [
     ("http://cinema-lights8.com/", "lights.html"),
-    ("https://www.inouedp.co.jp/icitycinema/timetable/", "icity.html"),
+    ("https://www.inouedp.co.jp/icitycinema/timetable/", "icity_current.html"),
+    ("https://www.inouedp.co.jp/icitycinema/schedule/", "icity_coming.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/index.html", "aeon_current.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon.html", "aeon_coming.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon2.html", "aeon_coming2.html"),
@@ -324,19 +325,15 @@ def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土�
                 end_date = datetime.date(year+1, month, day)
     return begin_date, end_date
 
-def read_icitycinema():
-    fn = "icity.html"
+def read_icitycinema_each_page(tabletag):
     theater = "アイシティシネマ"
     movie_list = []
-    html = get_parsed_html_from_file(fn)
-    # <article id="post-973" 
     # table
     # td colspanが設定されない->映画とみる / 空なら無視
     # <a ...>～</a><br>の次の行～がタイトル
     # 次のspanが来るまでがタイトル?
     # <span style="color: #3366ff;">～</span>が公開予定時期
-    article = html.find(id="post-973")
-    tds = article.find_all("td")
+    tds = tabletag.find_all("td")
     
     上映中flg = True
     for td in tds:
@@ -421,6 +418,20 @@ def read_icitycinema():
             movie = MovieTitle(movie_title, theater, 上映中flg, 
                                 when, begin_date, end_date, url)
             movie_list.append(movie)
+    return movie_list
+def read_icitycinema():
+    #上映中
+    html = get_parsed_html_from_file("icity_current.html")
+    linkanchor = html.find(id="movieguide").parent
+    for tag in linkanchor.next_siblings:
+        if tag.name == "table":
+            tabletag = tag
+            break
+    movie_list = read_icitycinema_each_page(tabletag)
+    #上映予定
+    coming_html = get_parsed_html_from_file("icity_coming.html")
+    tabletag = coming_html.find("table")
+    movie_list += read_icitycinema_each_page(tabletag)
     return movie_list
 
 def read_cinemalights():
