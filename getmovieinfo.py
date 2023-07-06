@@ -574,13 +574,16 @@ def read_azumaza():
         for tag in html.find_all(class_="t22"):
             parent = tag.parent
             grandparent = parent.parent
-            url = parent.find("a").get("href")
+            url = parent.find("a").get("href") #これエラーハンドリング必要では？
             
             title = tag.get_text().strip()
             # 「原題:」以降は消す
             title = re.sub(r"(原題|英題)[:：].+$", "", title)
-            
-            when = grandparent.find(class_="t16").get_text()
+            #print(title)
+            when_tag = grandparent.find(class_="t16")
+            if when_tag == None:
+                when_tag = grandparent.parent.find(class_="t16")
+            when = when_tag.get_text()
             begin_date = None
             end_date = None
             if when:
