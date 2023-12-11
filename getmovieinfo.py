@@ -34,6 +34,10 @@ JSON_DIR = "json" #作品一覧データのJSONを出力するディレクトリ
 
 TEMPLATE_HTML_FILE = "template.html"
 
+opener = urllib.request.build_opener()
+opener.addheaders = [('User-agent', 'Mozilla/5.0')]
+urllib.request.install_opener(opener)
+
 FOLDER_TIME_FMT = "%Y%m%d-%H%M" #取得したHTMLを入れるサブフォルダの形式。strftimeに渡す
 __recent_time_str = "" #キャッシュしちゃえ
 def get_recently_downloaded():
