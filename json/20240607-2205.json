@@ -1720,6 +1720,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/178309/index.html"
   },
   {
+    "title": "タイガー 裏切りのスパイ",
+    "theater": "東座",
+    "theater_url": "http://www.fromeastcinema.com/",
+    "now_showing_flg": false,
+    "when": "9/7(土)-9/20(金)",
+    "begin_date": "2024-09-07",
+    "end_date": "2024-09-20",
+    "url": "https://tiger3-movie.com/"
+  },
+  {
     "title": "ブリーディング・ラブ はじまりの旅",
     "theater": "東座",
     "theater_url": "http://www.fromeastcinema.com/",
@@ -1748,16 +1758,6 @@
     "begin_date": "2024-10-11",
     "end_date": null,
     "url": "https://wwws.warnerbros.co.jp/jokermovie/news/?id=21"
-  },
-  {
-    "title": "タイガー 裏切りのスパイ",
-    "theater": "東座",
-    "theater_url": "http://www.fromeastcinema.com/",
-    "now_showing_flg": false,
-    "when": "9/7(土)-9/20(金)",
-    "begin_date": null,
-    "end_date": null,
-    "url": "https://tiger3-movie.com/"
   },
   {
     "title": "八犬伝",

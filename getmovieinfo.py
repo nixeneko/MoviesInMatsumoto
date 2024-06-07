@@ -285,13 +285,14 @@ def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土�
     #年を今年に設定した場合に開始日が今日の3か月以上前になるなら翌年とする
     #年が入っている表記を確認: 12月25日（土）～2022年1月14日
     #開始日が去年の場合がある
+    #波ダッシュでなくハイフンであることがある
     if not s: return None, None
     begin_date = None
     end_date = None
     today = datetime.date.today()
     year = today.year
     # r = r"(\d{1,2}[/／月]\d{1,2})\D*[～〜~]\D*(\d{1,2}[/／月]\d{1,2})"
-    r_begin = r"(\d{1,2}[/／月]\d{1,2})\D*[～〜~]"
+    r_begin = r"(\d{1,2}[/／月]\d{1,2})\D*[～〜~-]"
     m_begin = re.search(r_begin, s)
     if m_begin:
         # begin
@@ -305,7 +306,7 @@ def date_range_str2dates(s): # 7/10(土)～7/23(金) または 3月13日（土�
         elif begin_date - today > datetime.timedelta(days=300): #10カ月以上先
             year -= 1
             begin_date = datetime.date(year, month, day)
-    r_end = r"[～〜~]\D*((\d{2,4})[/／年])?(\d{1,2}[/／月]\d{1,2})"
+    r_end = r"[～〜~-]\D*((\d{2,4})[/／年])?(\d{1,2}[/／月]\d{1,2})"
     m_end = re.search(r_end, s)
     if m_end:
         # end
