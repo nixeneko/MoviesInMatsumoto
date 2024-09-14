@@ -459,7 +459,8 @@ def read_cinemalights():
         _p_title2 = tag.find(class_="title2")
         p_title = _p_title if _p_title else _p_title2
         title = remove_multiple_space(p_title.get_text().strip())
-        url = p_title.find("a").get("href")
+        a_tag = p_title.find("a")
+        url = a_tag.get("href") if a_tag else None
         
         #when = data if data != "上映中" else ""
         #上映中flg = bool(_data)
