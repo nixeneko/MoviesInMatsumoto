@@ -374,6 +374,7 @@ def read_icitycinema_each_page(tabletag):
                         or l.endswith("限定上映予定") \
                         or l.endswith("上映終了") \
                         or l.endswith("上映終了予定") \
+                        or l.endswith("上映予定予定") \
                         or l.endswith("終了予定") \
                         or l.endswith("期間限定上映予定") \
                         or l.endswith("公開日未定"):
@@ -414,7 +415,8 @@ def read_icitycinema_each_page(tabletag):
                             end_date = date_str2date(when)
                         else:
                             begin_date = date_str2date(when)
-                elif when.endswith("上映終了") or when.endswith("上映終了予定") or when.endswith("終了予定"):
+                elif when.endswith("上映終了") or when.endswith("上映終了予定") or when.endswith("終了予定") \
+                                                                            or when.endswith("上映予定予定"): #虹ヶ咲映画の表記ミスに対応"
                     end_date = date_str2date(when)
                 else:
                     if not 上映中flg: #公開予定
