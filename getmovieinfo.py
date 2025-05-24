@@ -11,6 +11,7 @@ import urllib.request, urllib.parse
 import os, re, datetime, json
 import unicodedata
 import bs4
+import json5
 
 # そのうちHTTPSになるかもしれない。そうしたら更新しないと…
 THEATER_URL_DICT = {"アイシティシネマ": "https://www.inouedp.co.jp/icitycinema/",
@@ -25,8 +26,10 @@ URL_LIST = [
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/index.html", "aeon_current.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon.html", "aeon_coming.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon2.html", "aeon_coming2.html"),
-    ("http://www.fromeastcinema.com/schedule_azumaza.html", "azumaza.html"),
-    ("http://www.fromeastcinema.com/schedule.html", "azumaza_fe.html")
+    ("http://www.fromeastcinema.com/data/azumaza-data.js", "azumaza-data.js"),
+    ("http://www.fromeastcinema.com/data/azumaza-yokoku.js", "azumaza-yokoku.js"),
+    ("http://www.fromeastcinema.com/data/fromeast-data.js", "fromeast-data.js"),
+    ("http://www.fromeastcinema.com/data/fromeast-yokoku.js", "fromeast-yokoku.js")
     ]
 
 DOWNLOADED_DIR = "downloaded" #取得したHTMLファイルを保存するディレクトリ
@@ -73,6 +76,9 @@ def download_htmls():
         print("Downloading " + url)
         urllib.request.urlretrieve(url, filename)
     return time_str
+
+def get_filepath_from_filename(filename):
+    return os.path.join(DOWNLOADED_DIR, get_recently_downloaded(), filename)
 
 def get_parsed_html_from_file(filename):
     html = None
@@ -574,29 +580,31 @@ def read_azumaza():
     theater = "東座"
     #movie_list = []
     movie_dict = {}
-    fns = ["azumaza.html", "azumaza_fe.html"]
-    for fn in fns:
-        html = get_parsed_html_from_file(fn)
+    showingfiles = ["azumaza-data.js", "fromeast-data.js"]
+    yokokufiles = ["azumaza-yokoku.js", "fromeast-yokoku.js"]
+    
+    #上映中
+    上映中flg = True
+    for jsonfn in showingfiles:
+        with open(get_filepath_from_filename(jsonfn), "r") as f:
+            js_str = f.read()
+        json_str = js_str[js_str.find("=")+1:js_str.find(";")].strip()
+        json_loaded = json5.loads(json_str)
         
-        上映中flg = True 
-        for tag in html.find_all(class_="t22"):
-            parent = tag.parent
-            grandparent = parent.parent
-            url = parent.find("a").get("href") #これエラーハンドリング必要では？
-            
-            title = tag.get_text().strip()
+        for obj in json_loaded:
+            title = obj["movie"]["title"] #
+            url = obj["movie"]["siteUrl"] #
+            when = obj["movie"]["date"] #"5月10日（土）～ 5月23日（金）",
+            begin_date = datetime.date.fromisoformat(obj["movie"]["start"]) if obj["movie"]["start"] else None #"2025-05-10",
+            end_date = datetime.date.fromisoformat(obj["movie"]["end"]) if obj["movie"]["end"] else None #"2025-05-23",
+
             # 「原題:」以降は消す
             title = re.sub(r"(原題|英題)[:：].+$", "", title)
-            #print(title)
-            when_tag = grandparent.find(class_="t16")
-            if when_tag == None:
-                when_tag = grandparent.parent.find(class_="t16")
-            when = when_tag.get_text()
-            begin_date = None
-            end_date = None
-            if when:
-                begin_date, end_date = date_range_str2dates(when)
-                上映中flg = is_now_showing(begin_date, end_date)
+            
+            #begin_dateとend_dateがnullなことあるか？
+            #if when:
+            #    begin_date, end_date = date_range_str2dates(when)
+            #    上映中flg = is_now_showing(begin_date, end_date)
             
             movie = MovieTitle(title, theater, 上映中flg, 
                                 when, begin_date, end_date, url) #url信用できない
@@ -604,60 +612,42 @@ def read_azumaza():
             dict_key = begin_date.isoformat() + remove_multiple_space(title).split(" ")[0] #開始日とスペースの前の文字列だけで同一判定
             #begin_dateがNoneだとエラー出るなこれ
             movie_dict[dict_key] = movie
+    #予告
+    上映中flg = False
+    for jsonfn in yokokufiles:
+        with open(get_filepath_from_filename(jsonfn), "r") as f:
+            js_str = f.read()
+        json_str = js_str[js_str.find("=")+1:js_str.find(";")].strip()
+        json_loaded = json5.loads(json_str)
+        
+        for obj in json_loaded: 
+            title = obj["title"] 
+            url = obj["link"] 
+            when = obj["date"] #"5月10日（土）～ 5月23日（金）",
+            begin_date = datetime.date.fromisoformat(obj["start"]) if obj["start"] else None #"2025-05-17"
+            if begin_date is None:
+                begin_date, end_date = date_range_str2dates(when)
+            else:
+                _, end_date = date_range_str2dates(when)
+            上映中flg = is_now_showing(begin_date, end_date)
 
-        上映中flg = False
-        sq_gray = html.find("table", class_="sq_gray")
-        count_row = 0
-        list_title = []
-        list_when = []
-        list_url = []
-        for tr in sq_gray.find_all("tr"):
-            txt = tr.get_text().strip()
-            if txt == "上映予告":
-                #count_row = 0
-                continue
-            if count_row % 2 == 0: #期間
-                for td in tr.find_all("td"):
-                    when = td.get_text().strip()
-                    list_when.append(when)
-            else: #タイトル
-                for td in tr.find_all("td"):
-                    title = td.get_text().strip()
-                    url = ""
-                    if title:
-                        url = td.find("a").get("href")
-                    list_title.append(title)
-                    list_url.append(url)
+            # 「原題:」以降は消す
+            title = re.sub(r"(原題|英題)[:：].+$", "", title)
 
-                for title, when, url in zip(list_title, list_when, list_url):
-                    if title:
-                        上映中か予定か = "上映中" if 上映中flg else "上映予定"
-                        #URLを信用してはいけない。間違ってることがあるので
-                        begin_date = None
-                        end_date = None
-                        if when:
-                            begin_date, end_date = date_range_str2dates(when)
-                            上映中flg = is_now_showing(begin_date, end_date)
-                        movie = MovieTitle(title, theater, 上映中flg, 
-                                            when, begin_date, end_date, url) #url信用できない
-                        #movie_list.append(movie)
-                        if begin_date:
-                            dict_key = begin_date.isoformat() + remove_multiple_space(title).split(" ")[0] #開始日とスペースの前の文字列だけで同一判定
-                        else:
-                            dict_key = remove_multiple_space(title).split(" ")[0] #開始日が不明ならスペースの前の文字列だけで同一判定
-                        overlap_flg = False
-                        for key in movie_dict.keys():
-                            if dict_key.startswith(key) or key.startswith(dict_key):
-                                if len(dict_key) > 13 and len(key) > 13: #一応文字数が少なすぎるとアレかなあというのでつけてみている 10文字は日付
-                                    overlap_flg = True
-                        #if dict_key not in movie_dict:
-                        if not overlap_flg:
-                            movie_dict[dict_key] = movie
-                        
-                list_title = []
-                list_when = []
-                list_url = []
-            count_row += 1
+            movie = MovieTitle(title, theater, 上映中flg, 
+                                when, begin_date, end_date, url) #url信用できない
+            if begin_date:
+                dict_key = begin_date.isoformat() + remove_multiple_space(title).split(" ")[0] #開始日とスペースの前の文字列だけで同一判定
+            else:
+                dict_key = remove_multiple_space(title).split(" ")[0] #開始日が不明ならスペースの前の文字列だけで同一判定
+            overlap_flg = False
+            for key in movie_dict.keys():
+                if dict_key.startswith(key) or key.startswith(dict_key):
+                    if len(dict_key) > 13 and len(key) > 13: #一応文字数が少なすぎるとアレかなあというのでつけてみている 10文字は日付
+                        overlap_flg = True
+            if not overlap_flg:
+                movie_dict[dict_key] = movie
+
     return movie_dict.values()
     
 class MovieEncoder(json.JSONEncoder): #for json.dump
