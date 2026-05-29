@@ -21,8 +21,8 @@ THEATER_URL_DICT = {"アイシティシネマ": "https://www.inouedp.co.jp/icity
 #作品一覧データを取得するURL
 URL_LIST = [
     ("http://cinema-lights8.com/", "lights.html"),
-    ("https://www.inouedp.co.jp/icitycinema/timetable/", "icity_current.html"),
-    ("https://www.inouedp.co.jp/icitycinema/schedule/", "icity_coming.html"),
+    ("http://www.inouedp.co.jp/icitycinema/timetable/", "icity_current.html"),
+    ("http://www.inouedp.co.jp/icitycinema/schedule/", "icity_coming.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/index.html", "aeon_current.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon.html", "aeon_coming.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon2.html", "aeon_coming2.html"),
@@ -584,7 +584,7 @@ def read_azumaza():
     yokokufiles = ["azumaza-yokoku.js", "fromeast-yokoku.js"]
     
     #上映中
-    上映中flg = True
+    上映中flg = False
     for jsonfn in showingfiles:
         with open(get_filepath_from_filename(jsonfn), "r") as f:
             js_str = f.read()
@@ -602,9 +602,7 @@ def read_azumaza():
             title = re.sub(r"(原題|英題)[:：].+$", "", title)
             
             #begin_dateとend_dateがnullなことあるか？
-            #if when:
-            #    begin_date, end_date = date_range_str2dates(when)
-            #    上映中flg = is_now_showing(begin_date, end_date)
+            上映中flg = is_now_showing(begin_date, end_date)
             
             movie = MovieTitle(title, theater, 上映中flg, 
                                 when, begin_date, end_date, url) #url信用できない
