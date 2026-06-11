@@ -25,7 +25,6 @@ URL_LIST = [
     ("http://www.inouedp.co.jp/icitycinema/schedule/", "icity_coming.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/index.html", "aeon_current.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon.html", "aeon_coming.html"),
-    ("https://www.aeoncinema.com/cinema2/matsumoto/movie/comingsoon2.html", "aeon_coming2.html"),
     ("http://www.fromeastcinema.com/data/azumaza-data.js", "azumaza-data.js"),
     ("http://www.fromeastcinema.com/data/azumaza-yokoku.js", "azumaza-yokoku.js"),
     ("http://www.fromeastcinema.com/data/fromeast-data.js", "fromeast-data.js"),
@@ -512,57 +511,61 @@ def read_aeoncinema():
     movie_list = []
     html = get_parsed_html_from_file(fn)
     #print(base_url)
-    con_new_cinema = html.find(id="conNewCinema")
-    for tag in con_new_cinema.find_all(class_="cinemaBlock"):
-        cbTitle = tag.find(class_="cbTitle")
-        title = cbTitle.get_text()
-        rel_url = cbTitle.find("a").get("href")
+    main_tag = html.find("main") #<main>タグ
+    for tag in main_tag.find_all(class_="p-movie__list"):
+        title = tag.find("h3").get_text()
+        rel_url = tag.find("a").get("href")
         url = urllib.parse.urljoin(base_url, rel_url)
         when = ""
+        start_when = tag.get("data-screening-start-date")
+        end_when = tag.get("data-screening-end-date")
+        
+        begin_date = None
+        if start_when:
+            begin_date = datetime.date.fromisoformat(start_when.split("T")[0])
+                        
         end_date = None
-        上映終了tag = tag.find(class_="cbb_jyoueisyuryo")
-        if 上映終了tag:
-            when = 上映終了tag.get_text().strip()
-            end_date = date_str2date(when)
+        if end_when:
+            end_date =  datetime.date.fromisoformat(end_when.split("T")[0])
+        
         上映中flg = True
         
         movie = MovieTitle(title, theater, 上映中flg, 
                             when=when, end_date=end_date, url=url) #URLは別ページ取得しないととれないので面倒ね
         movie_list.append(movie)
         
-    fns = ["aeon_coming.html", "aeon_coming2.html"]
+    fns = ["aeon_coming.html"]
     for fn in fns:
         html = get_parsed_html_from_file(fn)
         
-        con_new_cinema = html.find(id="conNewCinema")
-        for tag in con_new_cinema.find_all(class_="cDateBlock"):
-            start_when = tag.find(class_="startDate").get_text()
+        main_tag = html.find("main") #<main>タグ
+        for tag in main_tag.find_all(class_="p-movie__list"):
+            title = tag.find("h3").get_text()
+            rel_url = tag.find("a").get("href")
+            url = urllib.parse.urljoin(base_url, rel_url)
+            when = tag.parent.find_previous_sibling("h3").get_text()
+
+            comments = tag.find("a").find_all(string=lambda text: isinstance(text, bs4.Comment))
+            for comment in comments:
+                #print(comment)
+                #コメントは" <span class="p-movie__status --red">1日限定上映</span> "の形
+                when = str(comment).split("<")[1].split(">")[1] #上書きしちゃっていいや
+            start_when = tag.get("data-screening-start-date")
+            end_when = tag.get("data-screening-end-date")
+            
+            begin_date = None
+            if start_when:
+                begin_date = datetime.date.fromisoformat(start_when.split("T")[0])
+                        
+            end_date = None
+            if end_when:
+                end_date =  datetime.date.fromisoformat(end_when.split("T")[0])
+            
             上映中flg = False
-            for tag2 in tag.find_all(class_="cinemaBlock"):
-                cbTitle = tag2.find(class_="cbTitle")
-                title = cbTitle.get_text()
-                rel_url = cbTitle.find("a").get("href")
-                url = urllib.parse.urljoin(base_url, rel_url)
-                
-                begin_date = None
-                if start_when:
-                    begin_date = date_str2date(start_when)
-                
-                end_when = ""
-                end_date = None
-                上映終了tag = tag2.find(class_="cbb_jyoueisyuryo")
-                if 上映終了tag:
-                    end_when = 上映終了tag.get_text().strip()
-                    end_date = date_str2date(end_when)
-                when = ""
-                if end_when:
-                    when = start_when + "～" + end_when.replace("終了予定", "")
-                else:
-                    when = start_when
-                
-                movie = MovieTitle(title, theater, 上映中flg, 
-                                    when, begin_date, end_date, url=url)
-                movie_list.append(movie)
+            
+            movie = MovieTitle(title, theater, 上映中flg, 
+                                when, begin_date, end_date, url=url)
+            movie_list.append(movie)
     return movie_list
 
 __today = datetime.date.today() #グローバルにしちゃえ
