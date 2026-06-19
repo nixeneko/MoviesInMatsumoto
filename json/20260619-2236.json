@@ -660,16 +660,6 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014835/"
   },
   {
-    "title": "えいが それいけ！アンパンマン パンタンと約束の星",
-    "theater": "シネマライツ",
-    "theater_url": "http://cinema-lights8.com/",
-    "now_showing_flg": false,
-    "when": "6/26(金)～",
-    "begin_date": "2026-06-26",
-    "end_date": null,
-    "url": "https://anpan-movie.com/2026/"
-  },
-  {
     "title": "スーパーガール",
     "theater": "アイシティシネマ",
     "theater_url": "https://www.inouedp.co.jp/icitycinema/",
@@ -708,6 +698,16 @@
     "begin_date": "2026-06-26",
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014397/"
+  },
+  {
+    "title": "えいが それいけ！アンパンマン パンタンと約束の星",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "6/26(金)～",
+    "begin_date": "2026-06-26",
+    "end_date": null,
+    "url": "https://anpan-movie.com/2026/"
   },
   {
     "title": "ロングウォーク",
