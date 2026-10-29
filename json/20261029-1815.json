@@ -10,6 +10,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000067/"
   },
   {
+    "title": "BOSS/ボス",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://boss-movie.jp/"
+  },
+  {
     "title": "DIGGER/ディガー",
     "theater": "アイシティシネマ",
     "theater_url": "https://www.inouedp.co.jp/icitycinema/",
@@ -28,6 +38,16 @@
     "begin_date": null,
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014745/"
+  },
+  {
+    "title": "DIGGER/ディガー",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://digger-movie.jp/"
   },
   {
     "title": "mentor",
@@ -60,6 +80,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014256/"
   },
   {
+    "title": "Michael/マイケル",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://www.michael-movie.jp/"
+  },
+  {
     "title": "NAZA",
     "theater": "東座",
     "theater_url": "http://www.fromeastcinema.com/",
@@ -70,6 +100,26 @@
     "url": "https://transformer.co.jp/movie/naza/"
   },
   {
+    "title": "SEKIRO: NO DEFEAT",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "～10/29(木)",
+    "begin_date": null,
+    "end_date": "2026-10-29",
+    "url": "https://sekiro-anime.jp/"
+  },
+  {
+    "title": "【午前十時の映画祭16】 椿三十郎",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "～10/29(木)",
+    "begin_date": null,
+    "end_date": "2026-10-29",
+    "url": "https://asa10.eiga.com/2026/"
+  },
+  {
     "title": "うるわしの宵の月",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -78,6 +128,16 @@
     "begin_date": null,
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014516/"
+  },
+  {
+    "title": "うるわしの宵の月",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://uruwashi.toho-movie.jp/"
   },
   {
     "title": "オデュッセイア",
@@ -100,6 +160,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1013738/"
   },
   {
+    "title": "オデュッセイア",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://odyssey-film.jp/"
+  },
+  {
     "title": "カルロス・カイザー サッカー史上最も奇妙な成功者",
     "theater": "アイシティシネマ",
     "theater_url": "https://www.inouedp.co.jp/icitycinema/",
@@ -108,6 +178,16 @@
     "begin_date": "2026-10-23",
     "end_date": null,
     "url": ""
+  },
+  {
+    "title": "ガールズ＆パンツァー 最終章 第5話",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://girls-und-panzer-finale.jp/"
   },
   {
     "title": "クジラに落ちた男",
@@ -130,6 +210,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000115/"
   },
   {
+    "title": "クジラに落ちた男",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://www.20thcenturystudios.jp/movies/whalefall"
+  },
+  {
     "title": "ストリートファイター／ザ・ムービー",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -138,6 +228,16 @@
     "begin_date": null,
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014815/"
+  },
+  {
+    "title": "ストリートファイター／ザ・ムービー",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://streetfighter-the-movie.jp/"
   },
   {
     "title": "映画ちいかわ 人魚の島のひみつ",
@@ -160,6 +260,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014449/"
   },
   {
+    "title": "映画ちいかわ 人魚の島のひみつ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://chiikawa.toho-movie.jp/"
+  },
+  {
     "title": "ディスクロージャー・デイ",
     "theater": "アイシティシネマ",
     "theater_url": "https://www.inouedp.co.jp/icitycinema/",
@@ -178,6 +288,26 @@
     "begin_date": null,
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014322/"
+  },
+  {
+    "title": "ディスクロージャー・デイ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://disclosureday.jp/"
+  },
+  {
+    "title": "どこよりも遠い場所にいる君へ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://sh-anime.shochiku.co.jp/dokokimi-movie/"
   },
   {
     "title": "ナギダイアリー",
@@ -210,6 +340,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000146/"
   },
   {
+    "title": "ハート・オブ・ビースト",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "～10/29(木)",
+    "begin_date": null,
+    "end_date": "2026-10-29",
+    "url": "https://heart-of-the-beast.jp/"
+  },
+  {
     "title": "バイオハザード",
     "theater": "アイシティシネマ",
     "theater_url": "https://www.inouedp.co.jp/icitycinema/",
@@ -228,6 +368,16 @@
     "begin_date": null,
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000059/"
+  },
+  {
+    "title": "バイオハザード",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://biomovie.jp/"
   },
   {
     "title": "バッド・ルーテナント：トウキョウ",
@@ -250,6 +400,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014721/"
   },
   {
+    "title": "バッド・ルーテナント：トウキョウ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://blt-movie.jp/"
+  },
+  {
     "title": "映画 ひつじのショーン かぼちゃ畑の怪物！",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -258,6 +418,16 @@
     "begin_date": null,
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000060/"
+  },
+  {
+    "title": "映画 ひつじのショーン かぼちゃ畑の怪物！",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://movies.shochiku.co.jp/shaun-kabocha/"
   },
   {
     "title": "ファーストボイス",
@@ -320,6 +490,26 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014704/"
   },
   {
+    "title": "ママがもうこの世界にいなくても 私の命の日記",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://www.mamaseka-movie.com/"
+  },
+  {
+    "title": "メイドインアビス 目覚める神秘",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://miabyss.com/"
+  },
+  {
     "title": "モネと時間旅行",
     "theater": "東座",
     "theater_url": "http://www.fromeastcinema.com/",
@@ -370,6 +560,46 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014625/"
   },
   {
+    "title": "映画名探偵プリキュア！不思議な庭と2人の秘密",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://2026.precure-movie.com/"
+  },
+  {
+    "title": "影を売る女",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://hs-movies.jp/kagewouruonna/"
+  },
+  {
+    "title": "愛し合ってるかい？ 忌野清志郎が教えてくれた",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "～10/29(木)",
+    "begin_date": null,
+    "end_date": "2026-10-29",
+    "url": "https://www.toei-video.co.jp/kiyoshiro-movie/"
+  },
+  {
+    "title": "我々は宇宙人",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "～10/29(木)",
+    "begin_date": null,
+    "end_date": "2026-10-29",
+    "url": "https://nothingnew.film/wearealiens/"
+  },
+  {
     "title": "新凱旋門物語",
     "theater": "東座",
     "theater_url": "http://www.fromeastcinema.com/",
@@ -378,6 +608,26 @@
     "begin_date": "2026-10-24",
     "end_date": "2026-11-06",
     "url": "https://mimosafilms.com/thegreatarch/"
+  },
+  {
+    "title": "昨日は殺れたかも",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://sakuyare-movie.com/"
+  },
+  {
+    "title": "時給三○○円の死神",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "～10/29(木)",
+    "begin_date": null,
+    "end_date": "2026-10-29",
+    "url": "https://gaga.ne.jp/jikyu-300movie/"
   },
   {
     "title": "時給三〇〇円の死神",
@@ -410,6 +660,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014715/"
   },
   {
+    "title": "最終楽章 響けユーフォニアム 後編",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://anime-eupho.com/"
+  },
+  {
     "title": "汝、星のごとく",
     "theater": "アイシティシネマ",
     "theater_url": "https://www.inouedp.co.jp/icitycinema/",
@@ -428,6 +688,16 @@
     "begin_date": null,
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014635/"
+  },
+  {
+    "title": "汝、星のごとく",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://nanji.toho-movie.jp/"
   },
   {
     "title": "白鳥とコウモリ",
@@ -450,6 +720,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014659/"
   },
   {
+    "title": "白鳥とコウモリ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "～10/29(木)",
+    "begin_date": null,
+    "end_date": "2026-10-29",
+    "url": "https://movies.shochiku.co.jp/eiga-hakuchotokomori/"
+  },
+  {
     "title": "私たちは、ちょうどいい。",
     "theater": "東座",
     "theater_url": "http://www.fromeastcinema.com/",
@@ -458,6 +738,16 @@
     "begin_date": "2026-10-10",
     "end_date": "2026-10-23",
     "url": "https://bobtrevinolikesit-movie.com/"
+  },
+  {
+    "title": "超かぐや姫！",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://www.cho-kaguyahime.com/"
   },
   {
     "title": "超かぐや姫！（特別フォーマット上映＆通常版再上映）",
@@ -490,6 +780,46 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014630/"
   },
   {
+    "title": "踊る大捜査線 N.E.W. メトロポリスを駆け抜けろ！",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://odoru.com/"
+  },
+  {
+    "title": "青春ブタ野郎はディアフレンドの夢を見ない",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://ao-buta.com/dearfriend/"
+  },
+  {
+    "title": "劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": true,
+    "when": "",
+    "begin_date": null,
+    "end_date": null,
+    "url": "https://www.madoka-magica.com/wr/"
+  },
+  {
+    "title": "RYUJI/竜二",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "10/30(金)～",
+    "begin_date": "2026-10-30",
+    "end_date": null,
+    "url": "https://www.culture-pub.jp/ryuji_movie/"
+  },
+  {
     "title": "TOMORROW X TOGETHER WORLD TOUR ‘ACT : TOMORROW’",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -498,6 +828,16 @@
     "begin_date": "2026-10-30",
     "end_date": "2026-11-11",
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000284/"
+  },
+  {
+    "title": "【午前十時の映画祭16】 恋人たちの予感",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "10/30(金)～11/12(木)",
+    "begin_date": "2026-10-30",
+    "end_date": "2026-11-12",
+    "url": "https://asa10.eiga.com/2026/"
   },
   {
     "title": "しびれ",
@@ -580,6 +920,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014634/"
   },
   {
+    "title": "ゴジラ-0.0",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/3(火・祝)～",
+    "begin_date": "2026-11-03",
+    "end_date": null,
+    "url": "https://godzilla-minuszero.toho-movie.jp/"
+  },
+  {
     "title": "【ディレイビューイング】吉田拓郎 SPECIAL LIVE 春だったね2026 supported by U-NEXT",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -600,6 +950,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000287/"
   },
   {
+    "title": "3ミリの恋",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/6(金)～",
+    "begin_date": "2026-11-06",
+    "end_date": null,
+    "url": "https://www.3mmlove-movie.com/"
+  },
+  {
     "title": "４アウト もう一度プレイボール",
     "theater": "アイシティシネマ",
     "theater_url": "https://www.inouedp.co.jp/icitycinema/",
@@ -610,6 +970,16 @@
     "url": "https://4out-movie.com/"
   },
   {
+    "title": "GROTESQQQUE -グロテスク-",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/6(金)～",
+    "begin_date": "2026-11-06",
+    "end_date": null,
+    "url": "https://movie-gtq123.com/"
+  },
+  {
     "title": "ヴェリティ／真実",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -618,6 +988,26 @@
     "begin_date": "2026-11-06",
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000068/"
+  },
+  {
+    "title": "ヴェリティ/真実",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/6(金)～",
+    "begin_date": "2026-11-06",
+    "end_date": null,
+    "url": "https://verity-shinjitsu.jp/"
+  },
+  {
+    "title": "仮面ライダーカブト 20th 天を継ぐもの",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/6(金)～",
+    "begin_date": "2026-11-06",
+    "end_date": null,
+    "url": "https://www.toei-video.co.jp/vcinext-kabuto/"
   },
   {
     "title": "星の教室",
@@ -638,6 +1028,16 @@
     "begin_date": "2026-11-06",
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000241/"
+  },
+  {
+    "title": "私たちは、ちょうどいい。",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/6(金)～",
+    "begin_date": "2026-11-06",
+    "end_date": null,
+    "url": "https://bobtrevinolikesit-movie.com/"
   },
   {
     "title": "【ディレイビューイング】IMPACT26",
@@ -670,6 +1070,36 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000285/"
   },
   {
+    "title": "【午前十時の映画祭16】 ラブ・アクチュアリー",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/13(金)～11/26(木)",
+    "begin_date": "2026-11-13",
+    "end_date": "2026-11-26",
+    "url": "https://asa10.eiga.com/2026/"
+  },
+  {
+    "title": "クリスマス・キャロル／3人のゴースト",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/13(金)～",
+    "begin_date": "2026-11-13",
+    "end_date": null,
+    "url": "https://christmas-carol.jp/"
+  },
+  {
+    "title": "トキシック・アドベンチャー",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/13(金)～",
+    "begin_date": "2026-11-13",
+    "end_date": null,
+    "url": "https://toxic-avenger.com/"
+  },
+  {
     "title": "『ブリジット・ジョーンズの日記』4Kレストア",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -700,6 +1130,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000122/"
   },
   {
+    "title": "呪いのスマホ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/13(金)～",
+    "begin_date": "2026-11-13",
+    "end_date": null,
+    "url": "https://movies.shochiku.co.jp/noroi-sumaho/"
+  },
+  {
     "title": "大富豪になるための正しい殺し方",
     "theater": "アイシティシネマ",
     "theater_url": "https://www.inouedp.co.jp/icitycinema/",
@@ -710,6 +1150,16 @@
     "url": "https://movies.kadokawa.co.jp/howtomakeakilling/"
   },
   {
+    "title": "楽園追放 心のレゾナンス",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/13(金)～",
+    "begin_date": "2026-11-13",
+    "end_date": null,
+    "url": "https://rakuen-tsuiho-r.com/"
+  },
+  {
     "title": "負けへんで！",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -718,6 +1168,16 @@
     "begin_date": "2026-11-13",
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000074/"
+  },
+  {
+    "title": "負けへんで",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/13(金)～",
+    "begin_date": "2026-11-13",
+    "end_date": null,
+    "url": "https://gaga.ne.jp/makehende/"
   },
   {
     "title": "霧のごとく",
@@ -750,6 +1210,26 @@
     "url": "https://kadokawa-kplus.com/numberone-movie/"
   },
   {
+    "title": "サッカー日本代表 FIFAワールドカップ2026「最高の景色」への挑戦 ONE CREATURE 2nd Leg",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/20(金)～",
+    "begin_date": "2026-11-20",
+    "end_date": null,
+    "url": "https://onecreature-movie.jp/"
+  },
+  {
+    "title": "ないものねだりの君に光の花束を",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/20(金)～",
+    "begin_date": "2026-11-20",
+    "end_date": null,
+    "url": "https://naihanamovie.jp/"
+  },
+  {
     "title": "ラブル＆クルー IN シアター 2026",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -768,6 +1248,36 @@
     "begin_date": "2026-11-20",
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/1014514/"
+  },
+  {
+    "title": "装甲騎兵ボトムズ 灰色の魔女",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/20(金)～",
+    "begin_date": "2026-11-20",
+    "end_date": null,
+    "url": "https://www.votoms-gh.com/"
+  },
+  {
+    "title": "劇場版 遊☆戯☆王 THE DARK SIDE OF DIMENSIONS【リバイバル上映】",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/20(金)～",
+    "begin_date": "2026-11-20",
+    "end_date": null,
+    "url": "https://yu-gi-oh.jp/special/"
+  },
+  {
+    "title": "魔法使いの夜",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/20(金)～",
+    "begin_date": "2026-11-20",
+    "end_date": null,
+    "url": "https://mahoyo-movie.com/"
   },
   {
     "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG",
@@ -800,6 +1310,46 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000286/"
   },
   {
+    "title": "【午前十時の映画祭16】 ガス人間第1号",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/27(金)～12/10(木)",
+    "begin_date": "2026-11-27",
+    "end_date": "2026-12-10",
+    "url": "https://asa10.eiga.com/2026/"
+  },
+  {
+    "title": "このごにおよんで愛など",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/27(金)～",
+    "begin_date": "2026-11-27",
+    "end_date": null,
+    "url": "https://k2pic.com/film/konogo"
+  },
+  {
+    "title": "まだまだあぶない刑事",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/27(金)～12/3(木)",
+    "begin_date": "2026-11-27",
+    "end_date": "2026-12-03",
+    "url": "https://abdk40.jp/movie-4k/"
+  },
+  {
+    "title": "ワンダンス",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/27(金)～",
+    "begin_date": "2026-11-27",
+    "end_date": null,
+    "url": "https://happinet-phantom.com/wandance/"
+  },
+  {
     "title": "三代目 J SOUL BROTHERS 15TH ANNIVERSARY STADIUM LIVE \"JSB FOREVER ～ONE～\" THE MOVIE",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -828,6 +1378,16 @@
     "begin_date": "2026-11-27",
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000243/"
+  },
+  {
+    "title": "君の話",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "11/27(金)～",
+    "begin_date": "2026-11-27",
+    "end_date": null,
+    "url": "https://movies.shochiku.co.jp/kimino-hanashi/"
   },
   {
     "title": "......overcome withあふれた..",
@@ -870,6 +1430,16 @@
     "url": "https://movies.shochiku.co.jp/midorikun-movie/"
   },
   {
+    "title": "お姉ちゃんの翠くん",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/4(金)～",
+    "begin_date": "2026-12-04",
+    "end_date": null,
+    "url": "https://movies.shochiku.co.jp/midorikun-movie/"
+  },
+  {
     "title": "『セブン』4K版",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -880,6 +1450,36 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000354/"
   },
   {
+    "title": "ビリーと魔法のはじまり",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/4(金)～",
+    "begin_date": "2026-12-04",
+    "end_date": null,
+    "url": "https://www.disney.co.jp/movie/billie"
+  },
+  {
+    "title": "【午前十時の映画祭16】 マタンゴ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/11(金)～12/24(木)",
+    "begin_date": "2026-12-11",
+    "end_date": "2026-12-24",
+    "url": "https://asa10.eiga.com/2026/"
+  },
+  {
+    "title": "もっとあぶない刑事",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/11(金)～12/17(木)",
+    "begin_date": "2026-12-11",
+    "end_date": "2026-12-17",
+    "url": "https://abdk40.jp/movie-4k/"
+  },
+  {
     "title": "薔薇の鎖",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -888,6 +1488,16 @@
     "begin_date": "2026-12-11",
     "end_date": null,
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000395/"
+  },
+  {
+    "title": "薬屋のひとりごと",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/11(金)～",
+    "begin_date": "2026-12-11",
+    "end_date": null,
+    "url": "https://kusuriyanohitorigoto.jp/movie/"
   },
   {
     "title": "劇場版 薬屋のひとりごと 亡妃の秘宝",
@@ -910,6 +1520,16 @@
     "url": "https://kusuriyanohitorigoto.jp/movie/"
   },
   {
+    "title": "超宇宙刑事ギャバンVSライヤ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/11(金)～",
+    "begin_date": "2026-12-11",
+    "end_date": null,
+    "url": "https://www.toei-video.co.jp/vcinext-gavaninf/"
+  },
+  {
     "title": "ブルネロ 静かなる先見者",
     "theater": "東座",
     "theater_url": "http://www.fromeastcinema.com/",
@@ -930,6 +1550,36 @@
     "url": "https://synca.jp/uminoue/"
   },
   {
+    "title": "アベンジャーズ/ドゥームズデイ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/18(金)～",
+    "begin_date": "2026-12-18",
+    "end_date": null,
+    "url": "https://marvel.disney.co.jp/movie/avengers-doomsday"
+  },
+  {
+    "title": "デューン 砂の惑星 PART3",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/18(金)～",
+    "begin_date": "2026-12-18",
+    "end_date": null,
+    "url": "https://dune-movie-3.jp/"
+  },
+  {
+    "title": "人生を変えたコント",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/18(金)～",
+    "begin_date": "2026-12-18",
+    "end_date": null,
+    "url": "https://gaga.ne.jp/jinsei_conte/"
+  },
+  {
     "title": "シークレット・エージェント",
     "theater": "東座",
     "theater_url": "http://www.fromeastcinema.com/",
@@ -940,6 +1590,16 @@
     "url": "https://klockworx.com/movies/secretagent/"
   },
   {
+    "title": "BYE BYE LOVE 探偵はBARにいる",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/25(金)～",
+    "begin_date": "2026-12-25",
+    "end_date": null,
+    "url": "https://www.tantei-bar.com/"
+  },
+  {
     "title": "SUKIYAKI 上を向いて歩こう",
     "theater": "アイシティシネマ",
     "theater_url": "https://www.inouedp.co.jp/icitycinema/",
@@ -948,6 +1608,26 @@
     "begin_date": "2026-12-25",
     "end_date": null,
     "url": "https://sukiyaki.toho-movie.jp/"
+  },
+  {
+    "title": "SUKIYAKI 上を向いて歩こう",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/25(金)～",
+    "begin_date": "2026-12-25",
+    "end_date": null,
+    "url": "https://sukiyaki.toho-movie.jp/"
+  },
+  {
+    "title": "【午前十時の映画祭16】 オペラ座の怪人",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "12/25(金)～1/7(木)",
+    "begin_date": "2026-12-25",
+    "end_date": "2027-01-07",
+    "url": "https://asa10.eiga.com/2026/"
   },
   {
     "title": "中島みゆき 劇場版「夜会」セレクション",
@@ -1060,6 +1740,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000080/"
   },
   {
+    "title": "あぶない刑事リターンズ",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "1/22(金)～1/28(木)",
+    "begin_date": "2027-01-22",
+    "end_date": "2027-01-28",
+    "url": "https://abdk40.jp/movie-4k/"
+  },
+  {
     "title": "ちっぽけなボクの、おおきな世界",
     "theater": "東座",
     "theater_url": "http://www.fromeastcinema.com/",
@@ -1090,6 +1780,16 @@
     "url": "https://www.aeoncinema.com/cinema2/matsumoto/movie/2000375/"
   },
   {
+    "title": "あぶない刑事フォーエヴァー TVスペシャル’98",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "2/11(木)～2/18(木)",
+    "begin_date": "2027-02-11",
+    "end_date": "2027-02-18",
+    "url": "https://abdk40.jp/movie-4k/"
+  },
+  {
     "title": "劇場版「ラブール けいぶ 大ピンチ！ねらわれたマンゴーフェスティバル」",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -1110,6 +1810,16 @@
     "url": "https://domainc.jp/agatha/"
   },
   {
+    "title": "あぶない刑事フォーエヴァー THE MOVIE",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "2/19(金)～2/25(木)",
+    "begin_date": "2027-02-19",
+    "end_date": "2027-02-25",
+    "url": "https://abdk40.jp/movie-4k/"
+  },
+  {
     "title": "劇場版『メダリスト』",
     "theater": "イオンシネマ松本",
     "theater_url": "https://www.aeoncinema.com/cinema/matsumoto/",
@@ -1128,6 +1838,16 @@
     "begin_date": "2027-02-19",
     "end_date": null,
     "url": "https://movies.kadokawa.co.jp/satsujin_no_mon/"
+  },
+  {
+    "title": "まだまだあぶない刑事",
+    "theater": "シネマライツ",
+    "theater_url": "http://cinema-lights8.com/",
+    "now_showing_flg": false,
+    "when": "3/5(金)～3/11(木)",
+    "begin_date": "2027-03-05",
+    "end_date": "2027-03-11",
+    "url": "https://abdk40.jp/movie-4k/"
   },
   {
     "title": "劇場版『TOKYO MER～走る緊急救命室～CAPITAL CRISIS』",

@@ -21,6 +21,7 @@ THEATER_URL_DICT = {"アイシティシネマ": "https://www.inouedp.co.jp/icity
 #作品一覧データを取得するURL
 URL_LIST = [
     ("http://cinema-lights8.com/", "lights.html"),
+    ("http://cinema-lights8.com/schedule.html", "lights_schedule.html"),
     ("http://www.inouedp.co.jp/icitycinema/timetable/", "icity_current.html"),
     ("http://www.inouedp.co.jp/icitycinema/schedule/", "icity_coming.html"),
     ("https://www.aeoncinema.com/cinema2/matsumoto/movie/index.html", "aeon_current.html"),
@@ -447,15 +448,13 @@ def read_icitycinema():
     return movie_list
 
 def read_cinemalights():
-    fn = "lights.html"
+    fn = "lights_schedule.html"
     theater = "シネマライツ"
     movie_list = []
     html = get_parsed_html_from_file(fn)
     
     上映中count = 0 #「上映中」出現前には上映中とする
-    
-    tbl = html.find(class_="l_table")
-    for tag in tbl.find_all(class_="movie_title"):
+    for tag in html.find_all(class_="movie_title"):
         _data = tag.find(class_="data")
         _data2 = tag.find(class_="data2")
         data = _data if _data else _data2
